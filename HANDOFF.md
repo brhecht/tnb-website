@@ -2,7 +2,7 @@
 *Last updated: April 15, 2026*
 
 ## Project Overview
-The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. Homepage implemented and ready to deploy.
+The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. **LIVE as of April 15, 2026.**
 
 ## Tech Stack
 Next.js 16.2.1 (App Router), Tailwind CSS 4, Vercel hosting. Email capture wired to Beehiiv via `/api/subscribe`. Bootstrapped from the `tnb-coming-soon` branch of `hc-website`.
@@ -18,10 +18,11 @@ Created April 15, 2026 to separate the TNB website from `hc-website`. Previously
 - `public/images/headshot.jpg` — Brian's headshot (hero photo)
 
 ## Current Status
-Homepage implemented and built (0 TypeScript errors). Needs:
-1. GitHub repo `brhecht/tnb-website` created by Brian
-2. Beehiiv env vars added in Vercel: `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`
-3. Vercel project reconnected from hc-website to tnb-website
+**LIVE at thenewbuilder.ai** — deployed April 15, 2026 via Vercel CLI to project `brian-hechts-projects/newbuilder`.
+
+Pending:
+1. Add Beehiiv env vars in Vercel (subscribe form returns error without them): `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`
+2. Push code to `brhecht/tnb-website` on GitHub + connect to Vercel project for auto-deploys (Brian needs to add Nico as collaborator)
 
 ## Homepage Sections (Approved April 15)
 1. **Nav** — "THE NEW BUILDER" wordmark left, YouTube/LinkedIn/Contact right (hidden mobile)
@@ -47,12 +48,21 @@ BEEHIIV_API_KEY=          # from Beehiiv Settings > API
 BEEHIIV_PUBLICATION_ID=   # from Beehiiv dashboard URL: pub_xxxxxxxx
 ```
 
-## Deploy Steps
-1. Brian creates `brhecht/tnb-website` on GitHub
-2. Push this code: `git remote add origin https://github.com/brhecht/tnb-website.git && git push -u origin main`
-3. In Vercel: disconnect thenewbuilder.ai from hc-website, connect to tnb-website
-4. Add env vars in Vercel project settings
-5. Deploy
+## Deploy
+Site is live. Deployed via `vercel deploy --prod` from local repo to Vercel project `brian-hechts-projects/newbuilder`.
+
+**To add Beehiiv env vars:**
+```bash
+cd ~/Developer/clients/hc/B-Suite/tnb-website
+vercel env add BEEHIIV_API_KEY production
+vercel env add BEEHIIV_PUBLICATION_ID production
+vercel deploy --prod
+```
+
+**To connect GitHub (for auto-deploys):**
+1. Brian adds Nico as collaborator on `brhecht/tnb-website`
+2. `git remote add origin https://github.com/brhecht/tnb-website.git && git push -u origin main`
+3. In Vercel dashboard: Settings > Git > Connect to `brhecht/tnb-website`
 
 ## Known Bugs / Issues
 None.
@@ -63,7 +73,9 @@ None.
 - Consider auto-pull for latest YouTube episode
 
 ## Session Log
-### April 15, 2026 — Homepage built
-- **What shipped:** Full Next.js implementation of approved homepage design. Beehiiv subscribe route. Zero build errors.
-- **Source of truth:** `tnb-homepage-preview.html` in hc-website/main (approved design). `bhub/NICO-BRIEF-TNB-WEBSITE.md` (build spec).
-- **Next:** Brian creates GitHub repo, add Beehiiv env vars, reconnect Vercel, deploy.
+### April 15, 2026 — Homepage built and deployed
+- **What shipped:** Full Next.js implementation of approved homepage design deployed to thenewbuilder.ai via Vercel CLI. Beehiiv subscribe route (env vars pending). Zero build errors.
+- **Source of truth:** `tnb-homepage-preview.html` in hc-website/main. `bhub/NICO-BRIEF-TNB-WEBSITE.md`.
+- **tnb-coming-soon** branch deleted from hc-website (local + remote).
+- **bsync.sh** conflict resolved in bhub, pushed.
+- **Next:** Brian provides Beehiiv API key + publication ID. Brian adds Nico as collaborator on `brhecht/tnb-website` for GitHub-connected auto-deploys.
