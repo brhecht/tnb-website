@@ -73,9 +73,16 @@ None.
 - Consider auto-pull for latest YouTube episode
 
 ## Session Log
-### April 15, 2026 — Homepage built and deployed
-- **What shipped:** Full Next.js implementation of approved homepage design deployed to thenewbuilder.ai via Vercel CLI. Beehiiv subscribe route (env vars pending). Zero build errors.
-- **Source of truth:** `tnb-homepage-preview.html` in hc-website/main. `bhub/NICO-BRIEF-TNB-WEBSITE.md`.
-- **tnb-coming-soon** branch deleted from hc-website (local + remote).
-- **bsync.sh** conflict resolved in bhub, pushed.
-- **Next:** Brian provides Beehiiv API key + publication ID. Brian adds Nico as collaborator on `brhecht/tnb-website` for GitHub-connected auto-deploys.
+### April 15, 2026 — Homepage built, deployed, and iterated
+- **What shipped:** Full Next.js implementation deployed to thenewbuilder.ai. All sections from approved design (nav, hero, story, 6-card grid, YouTube embed, subscribe, bio, footer).
+- Brian's photo: clean headshot (BRH.png, no watermark), rounded corners 16px.
+- Podcast card links to Riverside episode (`share.riverside.fm/episode/7e6dc792...`).
+- YouTube + nav/footer links → `@HumbleConvictionStartups`.
+- Contact email → `brian@thenewbuilder.ai`.
+- War Room / Meetups / Curated Events: non-clickable (`cursor: default`).
+- `tnb-coming-soon` branch deleted from hc-website (local + remote).
+- `bsync.sh` v2.1 conflict resolved in bhub, pushed.
+- `HANDOFF-MASTER.md` updated and pushed to bhub.
+- Vercel project renamed `newbuilder` → `thenewbuilder`.
+- Code on `nmejiawork/tnb-website` (transfer to `brhecht` pending).
+- **Next:** Brian provides Beehiiv API key + publication ID. Brian adds Nico as collaborator for GitHub auto-deploy.
