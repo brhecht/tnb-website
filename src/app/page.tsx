@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const YT_CHANNEL = "https://www.youtube.com/@the_new_builder";
+const YT_CHANNEL = "https://www.youtube.com/@HumbleConvictionStartups";
 const LINKEDIN = "https://www.linkedin.com/in/brianhecht/";
-const CONTACT = "mailto:brian@humbleconviction.com";
+const CONTACT = "mailto:brian@thenewbuilder.ai";
 const LATEST_VIDEO_ID = "_3601d3OpYY";
 const RIVERSIDE_EPISODE_ID = "7e6dc792-8a90-443d-bcbb-28090ed39313";
 
@@ -138,7 +138,7 @@ export default function Home() {
         <section className="hero-section" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", marginBottom: 64 }}>
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
             <Image
-              src="/images/headshot.jpg"
+              src="/images/brian.png"
               alt="Brian Hecht"
               width={400}
               height={480}
@@ -203,6 +203,7 @@ export default function Home() {
                 padding: 24,
                 borderRadius: 12,
                 border: "1px solid #e5e7eb",
+                cursor: card.href ? "pointer" : "default",
               };
               return card.href ? (
                 <a key={card.label} href={card.href} target={card.href.startsWith("http") ? "_blank" : undefined} rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined} style={cardStyle}>
