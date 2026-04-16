@@ -150,7 +150,7 @@ export default function Home() {
                 src="/images/brian.png"
                 alt="Brian Hecht"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", clipPath: "circle(50%)" }}
                 priority
               />
             </div>
