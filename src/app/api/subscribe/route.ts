@@ -66,17 +66,23 @@ export async function POST(request: Request) {
     const webhookUrl = process.env.SUBSCRIBERS_WEBHOOK_URL;
 
     if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          email,
-          name: name ?? "",
-          source: source ?? "newbuilder-homepage",
-        }),
-      });
-      console.log(`[subscribe] saved via webhook: ${email}`);
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          redirect: "follow",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            email,
+            name: name ?? "",
+            source: source ?? "newbuilder-homepage",
+          }),
+        });
+        console.log(`[subscribe] saved via webhook: ${email}`);
+      } catch (webhookErr) {
+        // Webhook failure doesn't block the user — log and continue
+        console.error("[subscribe] webhook error (non-blocking):", webhookErr);
+      }
       return NextResponse.json({ success: true });
     }
 
