@@ -13,7 +13,7 @@ const CARDS = [
   {
     label: "Podcast",
     desc: "Weekly conversations with founders and builders navigating the AI era.",
-    href: RIVERSIDE_EPISODE_URL,
+    href: null,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
@@ -137,14 +137,16 @@ export default function Home() {
         {/* Hero */}
         <section className="hero-section" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", marginBottom: 64 }}>
           <div style={{ display: "flex", justifyContent: "flex-start" }}>
-            <Image
-              src="/images/brian.png"
-              alt="Brian Hecht"
-              width={400}
-              height={480}
-              style={{ width: "100%", maxWidth: 400, borderRadius: 16, objectFit: "cover" }}
-              priority
-            />
+            <div style={{ width: 360, height: 360, borderRadius: "50%", overflow: "hidden", flexShrink: 0 }}>
+              <Image
+                src="/images/brian.png"
+                alt="Brian Hecht"
+                width={360}
+                height={360}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                priority
+              />
+            </div>
           </div>
           <div>
             <h1 style={{ fontSize: "clamp(48px, 7vw, 86px)", fontWeight: 800, lineHeight: 1.02, letterSpacing: "-0.02em" }}>
