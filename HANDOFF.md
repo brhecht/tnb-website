@@ -1,5 +1,5 @@
 # HANDOFF — TNB Website (thenewbuilder.ai)
-*Last updated: April 15, 2026*
+*Last updated: April 27, 2026*
 
 ## Project Overview
 The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. **LIVE as of April 15, 2026.**
@@ -15,6 +15,7 @@ Created April 15, 2026 to separate the TNB website from `hc-website`. Previously
 - `src/app/layout.tsx` — metadata (title: "The New Builder")
 - `src/app/globals.css` — base styles (system font, no animations)
 - `src/app/api/subscribe/route.ts` — Beehiiv email capture endpoint
+- `src/app/api/latest-video/route.ts` — YouTube RSS fetch, returns latest video ID (1h cache)
 - `public/images/headshot.jpg` — Brian's headshot (hero photo)
 
 ## Current Status
@@ -29,7 +30,7 @@ Pending:
 2. **Hero** — Brian's photo left, bold tagline right: "Navigating the AI era. Together." + one-liner
 3. **Why I'm building this** — stacked layout, max-width 720px
 4. **Builders Figuring it Out. Together.** — 3x2 card grid. Podcast + YouTube link to YouTube channel. Newsletter links to #subscribe anchor. War Room, Meetups, Curated Events are non-clickable.
-5. **Latest Episode** — YouTube embed (hardcoded: `_3601d3OpYY`, the pitching video from HC channel)
+5. **Latest Episode** — YouTube embed (auto-fetched via `/api/latest-video` from channel RSS, fallback `bKFXxGx6JhI`)
 6. **Stay in the loop** — email capture (Email + First name + Subscribe), wired to Beehiiv (utm_source: "newbuilder-homepage")
 7. **About Brian** — short bio
 8. **Footer** — copyright left, LinkedIn/YouTube/Email links right
@@ -68,9 +69,8 @@ vercel deploy --prod
 None.
 
 ## Backlog
-- Swap YouTube embed to actual TNB podcast episodes when ready
 - Wire War Room, Meetups, Curated Events cards when those pages exist
-- Consider auto-pull for latest YouTube episode
+- Add Beehiiv env vars (`BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`) in Vercel — subscribe form broken until then
 
 ## Session Log
 ### April 15, 2026 — Homepage built, deployed, and iterated
@@ -86,6 +86,14 @@ None.
 - Vercel project renamed `newbuilder` → `thenewbuilder`.
 - Code on `nmejiawork/tnb-website` (transfer to `brhecht` pending).
 - **Next:** Brian provides Beehiiv API key + publication ID. Brian adds Nico as collaborator for GitHub auto-deploy.
+
+### April 27, 2026 — YouTube embed → auto-update via RSS
+- **What shipped:** Eliminado `LATEST_VIDEO_ID` hardcodeado. El embed ahora se auto-actualiza al video más reciente del canal `@the_new_builder` (channel ID: `UCqAhVRJlLyY86vWAE5s_xhA`).
+- Nuevo endpoint `/api/latest-video`: fetcha RSS de YouTube, cachea 1 hora en Vercel, fallback `bKFXxGx6JhI`. `page.tsx` usa `useEffect` para llamarlo on mount.
+- `YT_CHANNEL` corregido de `@HumbleConvictionStartups` → `@the_new_builder`.
+- Resolvió conflicto de merge (remote tenía `fbAOEBio9QY`, eliminado a favor del sistema dinámico).
+- **Resultado:** Cuando Brian suba un episodio nuevo, la página lo muestra en ≤1 hora sin tocar código.
+- **Next:** Beehiiv env vars siguen pendientes.
 
 ### April 20, 2026 — Homepage YouTube embed swapped
 - **What shipped:** `LATEST_VIDEO_ID` updated from `_3601d3OpYY` (HC pitching video) to `fbAOEBio9QY` in `src/app/page.tsx`. Latest Episode section on thenewbuilder.ai now shows the new video.
