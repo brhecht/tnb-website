@@ -14,9 +14,10 @@ Created April 15, 2026 to separate the TNB website from `hc-website`. Previously
 - `src/app/page.tsx` — main homepage
 - `src/app/layout.tsx` — metadata (title: "The New Builder")
 - `src/app/globals.css` — base styles (system font, no animations)
+- `src/app/icon.svg` — favicon: 5x5 orange grid mark (#EE7C2A / #B0431F checkerboard, 30x30 viewBox). Next.js App Router auto-serves it at `/icon.svg` and auto-injects the `<link rel="icon">`.
 - `src/app/api/subscribe/route.ts` — Beehiiv email capture endpoint
 - `src/app/api/latest-video/route.ts` — YouTube RSS fetch, returns latest video ID (1h cache)
-- `public/images/headshot.jpg` — Brian's headshot (hero photo)
+- `public/images/brian.png` — Brian's headshot (hero photo, ~4MB)
 
 ## Current Status
 **LIVE at thenewbuilder.ai** — deployed April 15, 2026 via Vercel CLI to project `brian-hechts-projects/newbuilder`.
@@ -71,6 +72,7 @@ None.
 ## Backlog
 - Wire War Room, Meetups, Curated Events cards when those pages exist
 - Add Beehiiv env vars (`BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`) in Vercel — subscribe form broken until then
+- Replace `src/app/icon.svg` with the canonical TNB icon source asset (current is a recreation from a screenshot Brian shared April 30 — close but not pixel-perfect)
 
 ## Session Log
 ### April 30, 2026 — Favicon swapped to TNB orange grid mark
