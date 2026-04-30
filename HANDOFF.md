@@ -1,5 +1,5 @@
 # HANDOFF — TNB Website (thenewbuilder.ai)
-*Last updated: April 27, 2026*
+*Last updated: April 30, 2026*
 
 ## Project Overview
 The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. **LIVE as of April 15, 2026.**
@@ -73,6 +73,11 @@ None.
 - Add Beehiiv env vars (`BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`) in Vercel — subscribe form broken until then
 
 ## Session Log
+### April 30, 2026 — Favicon swapped to TNB orange grid mark
+- **What shipped:** Replaced default Next.js `favicon.ico` with `src/app/icon.svg` — 5x5 orange grid (#EE7C2A / #B0431F), strict checkerboard, 30x30 viewBox. Next.js App Router auto-serves it at `/icon.svg`. Old default favicon.ico removed.
+- **Known issues:** Pattern is a recreation from a screenshot Brian shared — if the canonical TNB icon source asset surfaces, swap `icon.svg` content directly. At 16px the grid reads as orange static (expected for any detailed favicon).
+- **Next:** Beehiiv env vars still pending (independent of this change).
+
 ### April 15, 2026 — Homepage built, deployed, and iterated
 - **What shipped:** Full Next.js implementation deployed to thenewbuilder.ai. All sections from approved design (nav, hero, story, 6-card grid, YouTube embed, subscribe, bio, footer).
 - Brian's photo: clean headshot (BRH.png, no watermark), rounded corners 16px.
