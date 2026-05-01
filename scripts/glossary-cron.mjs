@@ -178,9 +178,13 @@ Return ONLY the JSON array. No prose around it.`;
 
 const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
 
-console.log(`[glossary-cron] calling Anthropic API (model=${MODEL}, max_tokens=${MAX_TOKENS})...`);
+console.log(`[glossary-cron] calling Anthropic API (model=${MODEL}, max_tokens=${MAX_TOKENS}, streaming)...`);
 
-const response = await client.messages.create({
+// Use streaming because long web-search-grounded calls can exceed the SDK's
+// 10-minute synchronous threshold. .finalMessage() reassembles the streamed
+// chunks into the same shape messages.create() would have returned, so the
+// downstream parsing logic is unchanged.
+const stream = client.messages.stream({
   model: MODEL,
   max_tokens: MAX_TOKENS,
   system: SYSTEM_PROMPT,
@@ -198,6 +202,7 @@ const response = await client.messages.create({
     },
   ],
 });
+const response = await stream.finalMessage();
 
 console.log(`[glossary-cron] response stop_reason=${response.stop_reason}, content blocks=${response.content.length}`);
 console.log(`[glossary-cron] usage: input=${response.usage.input_tokens}, output=${response.usage.output_tokens}`);
