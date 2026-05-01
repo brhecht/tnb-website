@@ -1,0 +1,106 @@
+name: Glossary Cron
+
+# Weekly cron generates new glossary terms via the Anthropic API with web search,
+# writes Markdown files to content/glossary/, and commits them. Vercel auto-deploys
+# from main, so new terms appear live within minutes of the commit.
+#
+# Modes:
+#   - bootstrap: one-time, large initial corpus (~30-40 terms)
+#   - weekly: ongoing, ~5-10 newly-emerged terms (default)
+#
+# Manual trigger: Actions tab → Glossary Cron → Run workflow → choose mode.
+# Scheduled trigger: every Monday 13:00 UTC (8 AM EST / 9 AM EDT).
+
+on:
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'weekly'
+        type: choice
+        options:
+          - weekly
+          - bootstrap
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install script dependencies
+        run: npm install --no-save --no-package-lock gray-matter @anthropic-ai/sdk
+
+      - name: Determine mode
+        id: mode
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            MODE="weekly"
+          fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "Running in $MODE mode"
+
+      - name: Generate terms
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/glossary-cron.mjs ${{ steps.mode.outputs.mode }}
+
+      - name: Commit changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/glossary/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "Glossary cron (${{ steps.mode.outputs.mode }}): $COUNT term file(s) ($DATE)"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+            echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "### Glossary Cron — ${{ steps.mode.outputs.mode }} ✅" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.commit.outputs.committed }}" = "true" ]; then
+            echo "Committed ${{ steps.commit.outputs.count }} file changes." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No changes to commit (cron ran clean but produced no new terms)." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Notify Brain Inbox on failure
+        if: failure()
+        continue-on-error: true
+        env:
+          HANDOFF_SECRET: ${{ secrets.HANDOFF_SECRET }}
+        run: |
+          MODE_LABEL="${{ steps.mode.outputs.mode }}"
+          [ -z "$MODE_LABEL" ] && MODE_LABEL="unknown"
+          PROJECT="TNB Glossary Cron"
+          SUMMARY="Glossary cron failed in ${MODE_LABEL} mode. See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }} for logs."
+          PAYLOAD=$(jq -n \
+            --arg project "$PROJECT" \
+            --arg summary "$SUMMARY" \
+            --arg secret "$HANDOFF_SECRET" \
+            '{project: $project, summary: $summary, recipient: "nico@humbleconviction.com", secret: $secret}')
+          curl -fsS -X POST https://brain-inbox-six.vercel.app/api/handoff-notify \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            || echo "Brain Inbox notification failed (non-fatal)"
