@@ -217,7 +217,7 @@ export default function SuggestPanel({ inlineForm = true }: Props) {
                 Cancel
               </button>
               <span style={{ fontSize: 10.5, color: "#9ca3af", marginLeft: "auto" }}>
-                Goes to admin@thenewbuilder.ai. Reviewed and added if approved.
+                Goes to Brian + Nico. Reviewed and added if approved.
               </span>
             </div>
             {state === "error" && (

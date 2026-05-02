@@ -15,7 +15,12 @@ import { NextResponse } from "next/server";
  * nico@humbleconviction.com (CC).
  */
 
-const RECIPIENT = "admin@thenewbuilder.ai";
+// Fallback wiring (May 2 2026): admin@thenewbuilder.ai didn't deliver during initial test,
+// presumably because no mailbox/forwarding is set up on the .ai domain yet. Sending direct
+// to Brian's gmail with Nico CC'd, matching the Notification Routing Rules in the master
+// handoff. If admin@thenewbuilder.ai gets configured later, flip RECIPIENT back.
+const RECIPIENT = "brhnyc1970@gmail.com";
+const RECIPIENT_CC = "nico@humbleconviction.com";
 const SEND_EMAIL_ENDPOINT = "https://brain-inbox-six.vercel.app/api/send-email";
 
 // Allow up to ~500 chars of context — reasonable submission size, prevents abuse.
@@ -69,6 +74,7 @@ export async function POST(req: Request) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         to: RECIPIENT,
+        cc: RECIPIENT_CC,
         subject,
         body: emailBody,
         ...(secret ? { secret } : {}),
