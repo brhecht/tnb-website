@@ -28,6 +28,7 @@ export default function GlossaryIndexPage() {
     term: t.term,
     type: t.type,
     topic: t.topic,
+    familiarity: t.familiarity,
     aliases: t.aliases,
     shortDef: t.shortDef,
     addedLabel: addedLabel(t.dateAdded),

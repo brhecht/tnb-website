@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useMemo, useState, useCallback } from "react";
-import type { Topic, TermType } from "@/types/glossary";
+import type { Topic, TermType, Familiarity } from "@/types/glossary";
 import SuggestPanel from "./_components/SuggestPanel";
 
 interface CardData {
@@ -20,6 +20,7 @@ interface CardData {
   term: string;
   type: TermType;
   topic: Topic;
+  familiarity: Familiarity;
   aliases: string[];
   shortDef: string;
   addedLabel: string;
@@ -32,6 +33,11 @@ interface Props {
 }
 
 type SortBy = "recency" | "alpha";
+
+// localStorage key for the "Hide expert-only" toggle. Persisted across visits
+// so a returning reader's choice sticks. URL also mirrors via ?level=intro for
+// shareable links.
+const HIDE_EXPERT_KEY = "tnb-glossary-hide-expert";
 
 const SEARCH_ICON = (
   <svg
@@ -53,8 +59,21 @@ export default function GlossaryControls({ terms, topics }: Props) {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortBy>("recency");
+  // hideExpert filters out Specialist-tier terms (engineer-only deep cuts:
+  // kv-cache, mechanistic-interpretability, dpo, etc.). Common + Emerging stay.
+  // Off by default — corpus is the product; opt-in to hide.
+  const [hideExpert, setHideExpert] = useState(false);
 
-  // Hydrate from URL on mount (shareable filtered links).
+  // How many terms would be hidden if the toggle were on — used in label so
+  // the user knows the magnitude before flipping it. Computed once on mount,
+  // independent of other filters (it's a corpus-level fact, not a filter-state fact).
+  const specialistCount = useMemo(
+    () => terms.filter((t) => t.familiarity === "Specialist").length,
+    [terms],
+  );
+
+  // Hydrate from URL on mount (shareable filtered links). hideExpert hydrates
+  // from URL OR localStorage — URL wins if present.
   useEffect(() => {
     if (typeof window === "undefined") return;
     const sp = new URLSearchParams(window.location.search);
@@ -64,6 +83,21 @@ export default function GlossaryControls({ terms, topics }: Props) {
     if (q) setSearchQuery(q);
     const s = sp.get("sort");
     if (s === "alpha" || s === "recency") setSortBy(s);
+    const lvl = sp.get("level");
+    if (lvl === "intro") {
+      setHideExpert(true);
+    } else if (lvl === "all") {
+      setHideExpert(false);
+    } else {
+      // No URL override — fall back to localStorage.
+      try {
+        if (window.localStorage.getItem(HIDE_EXPERT_KEY) === "1") {
+          setHideExpert(true);
+        }
+      } catch {
+        // localStorage may be blocked (private mode etc.); fall through to default.
+      }
+    }
   }, [topics]);
 
   // Reflect state to URL (replaceState — no history pollution on every keystroke).
@@ -73,15 +107,31 @@ export default function GlossaryControls({ terms, topics }: Props) {
     if (activeTopic) sp.set("topic", activeTopic);
     if (searchQuery) sp.set("q", searchQuery);
     if (sortBy !== "recency") sp.set("sort", sortBy);
+    if (hideExpert) sp.set("level", "intro");
     const qs = sp.toString();
     const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
     if (newUrl !== window.location.pathname + window.location.search) {
       window.history.replaceState(null, "", newUrl);
     }
-  }, [activeTopic, searchQuery, sortBy]);
+  }, [activeTopic, searchQuery, sortBy, hideExpert]);
+
+  // Persist hideExpert across sessions.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (hideExpert) {
+        window.localStorage.setItem(HIDE_EXPERT_KEY, "1");
+      } else {
+        window.localStorage.removeItem(HIDE_EXPERT_KEY);
+      }
+    } catch {
+      // Best-effort; safe to ignore.
+    }
+  }, [hideExpert]);
 
   const filtered = useMemo(() => {
     let out = terms;
+    if (hideExpert) out = out.filter((t) => t.familiarity !== "Specialist");
     if (activeTopic) out = out.filter((t) => t.topic === activeTopic);
     if (searchQuery.trim()) {
       const q = searchQuery.trim().toLowerCase();
@@ -98,7 +148,7 @@ export default function GlossaryControls({ terms, topics }: Props) {
       sorted.sort((a, b) => a.term.localeCompare(b.term));
     }
     return sorted;
-  }, [terms, activeTopic, searchQuery, sortBy]);
+  }, [terms, activeTopic, searchQuery, sortBy, hideExpert]);
 
   const hasActiveFilter = activeTopic !== null || searchQuery.length > 0;
   const clearAll = useCallback(() => {
@@ -157,6 +207,34 @@ export default function GlossaryControls({ terms, topics }: Props) {
             A–Z
           </button>
         </div>
+        {/* Hide expert-only toggle pill — matches sort/topic chip aesthetic.
+            Filters out Specialist-tier (engineer-only) terms. State persists via
+            localStorage; URL mirrors as ?level=intro for shareable links. */}
+        <button
+          type="button"
+          onClick={() => setHideExpert((v) => !v)}
+          className="g-chip"
+          data-active={hideExpert}
+          aria-pressed={hideExpert}
+          title={`${specialistCount} terms tagged as engineer-only deep cuts (e.g. KV cache, mechanistic interpretability, DPO).`}
+          style={{
+            fontSize: 11,
+            padding: "3px 9px",
+            border: "0.5px solid",
+            borderColor: hideExpert ? "#000" : "#d1d5db",
+            borderRadius: 12,
+            cursor: "pointer",
+            background: hideExpert ? "#000" : "#fff",
+            color: hideExpert ? "#fff" : "#6b7280",
+            whiteSpace: "nowrap",
+            lineHeight: 1.4,
+            userSelect: "none",
+            fontFamily: "inherit",
+            flexShrink: 0,
+          }}
+        >
+          {hideExpert ? "✓ " : ""}Hide expert-only
+        </button>
         <div style={{ flex: "1 1 0", minWidth: 0 }} />
         <SuggestPanel />
       </div>
@@ -205,9 +283,13 @@ export default function GlossaryControls({ terms, topics }: Props) {
         )}
       </div>
 
-      {/* Results count */}
+      {/* Results count — when hideExpert is on, show how many were hidden so the
+          reader can self-assess whether they're missing something. */}
       <div style={{ fontSize: 11, color: "#9ca3af", marginBottom: 16 }}>
         {filtered.length} {filtered.length === 1 ? "term" : "terms"}
+        {hideExpert && specialistCount > 0 && (
+          <span> · {specialistCount} expert-only hidden</span>
+        )}
       </div>
 
       {/* Card grid */}
