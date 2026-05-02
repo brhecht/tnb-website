@@ -1,8 +1,8 @@
 # HANDOFF — TNB Website (thenewbuilder.ai)
-*Last updated: May 2, 2026*
+*Last updated: May 2, 2026 (post-topic-depth)*
 
 ## Project Overview
-The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. **LIVE as of April 15, 2026.** Now includes a full **Dynamic Glossary** at `/glossary` (shipped May 1-2): 136 AI/builder terms with weekly auto-update via Anthropic-grounded GitHub Actions cron.
+The New Builder homepage at thenewbuilder.ai. Public-facing website for the TNB brand. **LIVE as of April 15, 2026.** Now includes a full **Dynamic Glossary** at `/glossary` (shipped May 1-2): **287 AI/builder terms** with weekly auto-update via Anthropic-grounded GitHub Actions cron.
 
 ## Tech Stack
 Next.js 16.2.1 (App Router), Tailwind CSS 4, Vercel hosting. Substack subscribe embed (Beehiiv pivot Apr 21). Glossary uses `gray-matter` for MD frontmatter parsing, `@anthropic-ai/sdk` for the cron (installed in workflow only, not in app deps).
@@ -36,20 +36,20 @@ Created April 15, 2026 to separate the TNB website from `hc-website`. Previously
 
 **LIVE at thenewbuilder.ai** — auto-deploys from `brhecht/tnb-website` main via Vercel.
 
-**Dynamic Glossary (May 1-2):** SHIPPED. Live at `/glossary` with **136 terms**, expanding via weekly cron.
+**Dynamic Glossary (May 1-2):** SHIPPED. Live at `/glossary` with **287 terms**, expanding via weekly cron.
 - Bootstrap (May 1): 42 starter terms.
 - OpenClaw (May 1, manual fill): +1.
-- Source-scan (May 2): +42 (viral / post-cutoff products like Cursor/Windsurf/Zed/Ollama/Claude Code/MCP servers/etc.).
-- Gap-audit (May 2): +52 (Anthropic/OpenAI/Google product specifics: Claude Skills, Claude Artifacts, NotebookLM, Custom GPTs, Project Astra, Llama 4, etc.).
-- Self-audit dedup (May 2): -1 (`moe` removed; `mixture-of-experts` already had MoE as alias).
+- Source-scan (May 2 AM): +42 (viral / post-cutoff products: Cursor, Windsurf, Zed, Ollama, Claude Code, MCP servers, etc.).
+- Gap-audit (May 2 AM): +52 (Anthropic/OpenAI/Google product specifics: Claude Skills, Claude Artifacts, NotebookLM, Custom GPTs, Project Astra, Llama 4, etc.).
+- Topic-depth × 7 (May 2 PM, post-credit-top-up): +152 across all 7 topics. Roles & Org +22, Business Models +22, Infrastructure +23, Patterns & Practices +22, AI Models & Capabilities +22, Agents & Automation +21, Builder Tools +20.
+- Self-audit dedup (May 2): -2 total (`moe` and `agent-loop` removed; both covered by other entries' aliases).
 
 Weekly cron is on auto-pilot — fires Mondays 13:00 UTC. Multi-vector discovery (source-scan + targeted-search + adversarial-audit + manual-queue check). Failure pings Brain Inbox `/api/handoff-notify` (recipient: nico).
 
 Pending:
 1. Add Beehiiv env vars in Vercel (legacy `/api/subscribe` returns error without them): `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`. Subscribe form on the live site now uses a Substack iframe and is unaffected — these are only for the legacy API route.
-2. **Anthropic API credit balance — exhausted as of May 2 evening.** Bootstrap + source-scan + gap-audit drained the new key. Topic-depth × 7 was started but failed on the first dispatch (Business Models) with `BadRequestError: 400 — Your credit balance is too low`. To resume: console.anthropic.com → Settings → Plans & Billing → add credits (~$20-50 covers many weeks). Then re-run topic-depth via Actions tab dispatcher (one per topic).
-3. **Anthropic API key rotation pending.** Brian exposed the key value in chat during initial setup. Recommended: console.anthropic.com → revoke + regenerate → update `ANTHROPIC_API_KEY` in `brhecht/tnb-website` GitHub Secrets + Vercel env vars on hc-funnel and builder-bot (which share the same key).
-4. War Room / Meetups / Curated Events homepage cards remain non-clickable until those pages exist.
+2. **Anthropic API key rotation pending.** Brian exposed the key value in chat during initial setup. Recommended: console.anthropic.com → revoke + regenerate → update `ANTHROPIC_API_KEY` in `brhecht/tnb-website` GitHub Secrets + Vercel env vars on hc-funnel and builder-bot (which share the same key).
+3. War Room / Meetups / Curated Events homepage cards remain non-clickable until those pages exist.
 
 ## Glossary Cron Modes (workflow_dispatch)
 
@@ -64,19 +64,19 @@ The workflow supports six modes, dispatchable from the Actions tab:
 | `topic-depth` | Per-topic forcing function, 15-25 terms scoped to one topic (REQUIRES topic input) | Run once per topic for breadth. **6 of 7 deferred — see Pending #2.** |
 | `source-scan` | Deterministic source-aggregator polling (GitHub Trending, HN, Product Hunt, etc.) | Quarterly, or when feeling out-of-currency |
 
-## Glossary Topic Distribution (May 2)
+## Glossary Topic Distribution (May 2, post-topic-depth)
 
 | Topic | Count |
 |---|---|
-| Agents & Automation | 33 |
-| Builder Tools | 33 |
-| AI Models & Capabilities | 26 |
-| Patterns & Practices | 23 |
-| Infrastructure | 14 |
-| Roles & Org | 4 |
-| Business Models | 3 |
+| Agents & Automation | 54 |
+| Builder Tools | 53 |
+| AI Models & Capabilities | 48 |
+| Patterns & Practices | 45 |
+| Infrastructure | 37 |
+| Roles & Org | 26 |
+| Business Models | 25 |
 
-Roles & Org and Business Models are the light buckets. Topic-depth × 7 was designed to fix them — deferred on Anthropic credits.
+Total: **287 terms.** Distribution is balanced — topic-depth × 7 successfully filled out the previously-light buckets (Roles & Org went from 4→26, Business Models 3→25).
 
 ## Glossary Spec Decisions (locked in BUILD-SPEC.md)
 
@@ -152,7 +152,24 @@ Auto-deploys from `brhecht/tnb-website` main via Vercel. No manual deploy steps 
 
 ## Session Log
 
-### May 2, 2026 — Glossary corpus expanded 42 → 136 + multi-mode cron + UX iteration
+### May 2, 2026 (PM) — Topic-depth × 7 complete + final dedup. Corpus 136 → 287
+- **What shipped:** All 7 topic-depth passes ran successfully after Brian added $25 Anthropic credits.
+  - Roles & Org: +22 (4 → 26)
+  - Business Models: +22 (3 → 25)
+  - Infrastructure: +23 (14 → 37)
+  - Patterns & Practices: +22 (23 → 45)
+  - AI Models & Capabilities: +22 (26 → 48)
+  - Agents & Automation: +21 (33 → 54)
+  - Builder Tools: +20 (33 → 53)
+  - Total topic-depth additions: **+152**
+- **Self-audit:** Found and removed `agent-loop` (duplicate of `agentic-loop` which already had "agent loop" as alias). Final corpus: **287 terms**.
+- **Spend:** ~$5-7 in Anthropic credits across the 7 runs. Each topic-depth was 16K max tokens + 8 web searches, ~$0.50-1 each.
+- **Distribution now balanced:** all 7 topics in the 25-54 range. No topic is anemic.
+- **Voice spot-check:** continued to pass — TNB-utility tone consistent, inline parentheticals for jargon, no em dashes, no encyclopedia voice.
+- **Known issues:** None new. Anthropic API key rotation still pending.
+- **Next:** Glossary is in a strong steady state. Weekly cron will continue adding ~5-10 emerging terms per Monday. Manual queue available for spot-fills when Brian sees missing terms in the wild.
+
+### May 2, 2026 (AM) — Glossary corpus expanded 42 → 136 + multi-mode cron + UX iteration
 - **What shipped:**
   - **Multi-mode cron infrastructure.** Added 4 new modes to `scripts/glossary-cron.mjs` and `.github/workflows/glossary-cron.yml`: `manual` (queue-based deterministic adds), `gap-audit` (adversarial completeness against existing corpus), `topic-depth` (per-topic forcing function with topic input), `source-scan` (deterministic source-aggregator polling — GitHub Trending, HN, Product Hunt, AI publication coverage). Refactored `weekly` mode to use multi-vector discovery prompt.
   - **Manual queue file** at `scripts/manual-terms.txt` with usage instructions in comments. Forever-pattern for spot-fills.
