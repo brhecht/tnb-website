@@ -13,6 +13,7 @@
 
 import { useEffect, useMemo, useState, useCallback } from "react";
 import type { Topic, TermType } from "@/types/glossary";
+import SuggestPanel from "./_components/SuggestPanel";
 
 interface CardData {
   slug: string;
@@ -107,8 +108,9 @@ export default function GlossaryControls({ terms, topics }: Props) {
 
   return (
     <div>
-      {/* Controls row: search + sort */}
-      <div className="g-search-row" style={{ display: "flex", gap: 18, alignItems: "center", marginBottom: 14 }}>
+      {/* Controls row: search + sort + suggest. flexWrap allows the SuggestPanel form
+          to wrap onto its own row below the controls when open (form has flexBasis: 100%). */}
+      <div className="g-search-row" style={{ display: "flex", gap: 18, alignItems: "center", marginBottom: 14, flexWrap: "wrap" }}>
         <div style={{ position: "relative", width: 280, maxWidth: "100%", flexShrink: 0 }}>
           {SEARCH_ICON}
           <input
@@ -119,16 +121,17 @@ export default function GlossaryControls({ terms, topics }: Props) {
             aria-label="Search glossary terms"
             style={{
               width: "100%",
-              padding: "5px 10px 5px 30px",
+              padding: "4px 10px 4px 28px",
               border: "0.5px solid #d1d5db",
               borderRadius: 6,
-              fontSize: 13,
+              fontSize: 12,
               fontFamily: "inherit",
               color: "#000",
               background: "#fff",
               outline: "none",
               lineHeight: 1.5,
-              height: 28,
+              height: 26,
+              boxSizing: "border-box",
             }}
           />
         </div>
@@ -154,6 +157,8 @@ export default function GlossaryControls({ terms, topics }: Props) {
             A–Z
           </button>
         </div>
+        <div style={{ flex: "1 1 0", minWidth: 0 }} />
+        <SuggestPanel />
       </div>
 
       {/* Topic filter row */}

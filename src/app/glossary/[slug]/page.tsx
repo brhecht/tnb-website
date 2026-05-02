@@ -10,6 +10,8 @@ import {
   getRelatedTerms,
 } from "@/lib/glossary";
 import { linkifyParagraph } from "@/lib/glossary-autolink";
+import SearchAutocomplete from "../_components/SearchAutocomplete";
+import SuggestPanel from "../_components/SuggestPanel";
 
 const YT_CHANNEL = "https://www.youtube.com/@the_new_builder";
 const LINKEDIN = "https://www.linkedin.com/in/brianhecht/";
@@ -53,6 +55,13 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
   const allTerms = getAllTerms();
   const related = getRelatedTerms(term.related);
+  // Trim down to what SearchAutocomplete actually needs — keeps the client bundle lean.
+  const searchTerms = allTerms.map((t) => ({
+    slug: t.slug,
+    term: t.term,
+    type: t.type,
+    aliases: t.aliases,
+  }));
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -78,18 +87,23 @@ export default async function GlossaryTermPage({ params }: PageProps) {
           </div>
         </nav>
 
-        <article style={{ maxWidth: 720 }}>
-          {/* Back to glossary — primary back affordance, replaces former breadcrumb */}
-          <div style={{ marginBottom: 22 }}>
-            <Link
-              href="/glossary"
-              className="g-back-top"
-              style={{ fontSize: 13, color: "#6b7280", textDecoration: "none", display: "inline-block" }}
-            >
-              ← Back to glossary
-            </Link>
-          </div>
+        {/* Article controls — section-level interactions visible from every per-term page.
+            Outside the 720px article max-width so the Suggest form (when open) can use the
+            full content column when revealed. flexWrap allows the form to break to its own row. */}
+        <div style={{ display: "flex", gap: 14, alignItems: "center", marginBottom: 22, flexWrap: "wrap" }}>
+          <Link
+            href="/glossary"
+            className="g-back-top"
+            style={{ fontSize: 13, color: "#6b7280", textDecoration: "none", flexShrink: 0 }}
+          >
+            ← Back to glossary
+          </Link>
+          <SearchAutocomplete terms={searchTerms} widthPx={240} />
+          <div style={{ flex: "1 1 0", minWidth: 0 }} />
+          <SuggestPanel />
+        </div>
 
+        <article style={{ maxWidth: 720 }}>
           {/* Meta strip — topic is clickable, lands on /glossary filtered to that topic */}
           <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 16 }}>
             <span style={{ fontSize: 9, padding: "2px 6px", borderRadius: 3, background: "#f3f4f6", color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.06em", fontWeight: 500, whiteSpace: "nowrap", lineHeight: 1.4 }}>
