@@ -1,15 +1,18 @@
 name: Glossary Cron
 
-# Weekly cron generates new glossary terms via the Anthropic API with web search,
-# writes Markdown files to content/glossary/, and commits them. Vercel auto-deploys
-# from main, so new terms appear live within minutes of the commit.
+# Multi-mode discovery + generation engine.
 #
-# Modes:
-#   - bootstrap: one-time, large initial corpus (~30-40 terms)
-#   - weekly: ongoing, ~5-10 newly-emerged terms (default)
+# Scheduled mode: weekly cron, fires Mondays 13:00 UTC.
+# Manual modes (workflow_dispatch):
+#   - bootstrap: one-time large initial corpus (~30-40 terms)
+#   - weekly: ongoing freshness layer
+#   - manual: read scripts/manual-terms.txt, generate the listed terms
+#   - gap-audit: adversarial completeness check, up to ~50 missing terms
+#   - topic-depth: per-topic forcing function (REQUIRES topic input)
+#   - source-scan: deterministic source-aggregator polling for viral / emerging
 #
-# Manual trigger: Actions tab → Glossary Cron → Run workflow → choose mode.
-# Scheduled trigger: every Monday 13:00 UTC (8 AM EST / 9 AM EDT).
+# Modes commit MD files to /content/glossary/. Vercel auto-deploys from main.
+# Failures ping Brain Inbox /api/handoff-notify (recipient: nico).
 
 on:
   schedule:
@@ -24,6 +27,23 @@ on:
         options:
           - weekly
           - bootstrap
+          - manual
+          - gap-audit
+          - topic-depth
+          - source-scan
+      topic:
+        description: 'Topic name (REQUIRED for topic-depth mode; ignored otherwise)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - 'AI Models & Capabilities'
+          - 'Agents & Automation'
+          - 'Builder Tools'
+          - 'Patterns & Practices'
+          - 'Roles & Org'
+          - 'Business Models'
+          - 'Infrastructure'
 
 jobs:
   generate:
@@ -42,20 +62,31 @@ jobs:
       - name: Install script dependencies
         run: npm install --no-save --no-package-lock gray-matter @anthropic-ai/sdk
 
-      - name: Determine mode
+      - name: Determine mode + topic
         id: mode
         run: |
           MODE="${{ github.event.inputs.mode }}"
+          TOPIC="${{ github.event.inputs.topic }}"
           if [ -z "$MODE" ]; then
             MODE="weekly"
           fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
-          echo "Running in $MODE mode"
+          echo "topic=$TOPIC" >> "$GITHUB_OUTPUT"
+          if [ "$MODE" = "topic-depth" ] && [ -z "$TOPIC" ]; then
+            echo "::error::topic-depth mode requires the 'topic' input"
+            exit 1
+          fi
+          echo "Running mode=$MODE${TOPIC:+ topic=$TOPIC}"
 
       - name: Generate terms
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/glossary-cron.mjs ${{ steps.mode.outputs.mode }}
+        run: |
+          if [ -n "${{ steps.mode.outputs.topic }}" ]; then
+            node scripts/glossary-cron.mjs "${{ steps.mode.outputs.mode }}" "${{ steps.mode.outputs.topic }}"
+          else
+            node scripts/glossary-cron.mjs "${{ steps.mode.outputs.mode }}"
+          fi
 
       - name: Commit changes
         id: commit
@@ -69,7 +100,14 @@ jobs:
           else
             COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ')
             DATE=$(date -u +%Y-%m-%d)
-            git commit -m "Glossary cron (${{ steps.mode.outputs.mode }}): $COUNT term file(s) ($DATE)"
+            MODE_LABEL="${{ steps.mode.outputs.mode }}"
+            TOPIC_LABEL="${{ steps.mode.outputs.topic }}"
+            if [ -n "$TOPIC_LABEL" ]; then
+              MSG="Glossary cron ($MODE_LABEL: $TOPIC_LABEL): $COUNT term file(s) ($DATE)"
+            else
+              MSG="Glossary cron ($MODE_LABEL): $COUNT term file(s) ($DATE)"
+            fi
+            git commit -m "$MSG"
             git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
             echo "count=$COUNT" >> "$GITHUB_OUTPUT"
@@ -78,7 +116,9 @@ jobs:
       - name: Summary
         if: success()
         run: |
-          echo "### Glossary Cron — ${{ steps.mode.outputs.mode }} ✅" >> "$GITHUB_STEP_SUMMARY"
+          MODE="${{ steps.mode.outputs.mode }}"
+          TOPIC="${{ steps.mode.outputs.topic }}"
+          echo "### Glossary Cron — $MODE${TOPIC:+ ($TOPIC)} ✅" >> "$GITHUB_STEP_SUMMARY"
           if [ "${{ steps.commit.outputs.committed }}" = "true" ]; then
             echo "Committed ${{ steps.commit.outputs.count }} file changes." >> "$GITHUB_STEP_SUMMARY"
           else

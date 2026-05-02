@@ -1,0 +1,21 @@
+# scripts/manual-terms.txt
+#
+# One term name per line. Lines starting with # are comments.
+# Trigger the workflow with mode=manual to generate definitions for every
+# term in this file that isn't already in /content/glossary/.
+#
+# Use this file when you spot a glossary gap in the wild — paste the term
+# here, push, run the workflow. Definition lands in ~5 minutes. This is
+# the deterministic backstop for anything the cron's web-grounded
+# discovery misses.
+#
+# Format: just the human-readable term name. The script slugifies it.
+#   examples:
+#     Subagent
+#     Skill
+#     Notebook LM
+#     Artifact
+#
+# After a successful run, the cron workflow doesn't auto-clear this file
+# (so you can see history of manual adds). Comment out or delete lines
+# manually if you want to re-trigger generation for a term.
