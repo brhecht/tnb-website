@@ -1,1440 +1,1440 @@
 {
-  "generatedAt": "2026-05-03T00:25:56.150Z",
+  "generatedAt": "2026-05-03T00:46:06.605Z",
   "classifications": [
     {
       "slug": "a2a-protocol",
       "familiarity": "Specialist",
-      "reason": "inter-agent protocol standard, deep infra/framework concern"
+      "reason": "agent interoperability protocol, deep infra/research territory"
     },
     {
       "slug": "agent-builder",
       "familiarity": "Emerging",
-      "reason": "builder role, not mainstream business press vocabulary"
+      "reason": "role title appearing in builder hiring posts and tooling discourse"
     },
     {
       "slug": "agent-checkpoint",
       "familiarity": "Specialist",
-      "reason": "agent execution internals, only relevant to implementers"
+      "reason": "implementation detail of agent execution infrastructure"
     },
     {
       "slug": "agent-evals",
       "familiarity": "Emerging",
-      "reason": "builder testing practice, not non-technical reader territory"
+      "reason": "builder-level practice for production agent quality assurance"
     },
     {
       "slug": "agent-framework",
       "familiarity": "Emerging",
-      "reason": "developer tooling concept, useful for builders not general readers"
+      "reason": "builder vocabulary for constructing agent systems from components"
     },
     {
       "slug": "agent-handoff",
       "familiarity": "Emerging",
-      "reason": "multi-agent coordination detail, builder-level concern"
+      "reason": "multi-agent design pattern used when building agent systems"
     },
     {
       "slug": "agent-memory",
-      "familiarity": "Emerging",
-      "reason": "agent architecture concept, useful for builders shipping agents"
+      "familiarity": "Common",
+      "reason": "concept widely discussed in AI product and founder discourse"
     },
     {
       "slug": "agent-observability",
       "familiarity": "Emerging",
-      "reason": "production monitoring practice, builder-level concern"
+      "reason": "production monitoring practice for builders shipping agents"
     },
     {
       "slug": "agent-scaffold",
       "familiarity": "Specialist",
-      "reason": "under-the-hood agent infrastructure, implementer-only term"
+      "reason": "under-the-hood infrastructure concept for agent implementation"
     },
     {
       "slug": "agent-skills",
       "familiarity": "Emerging",
-      "reason": "coding agent extensibility pattern, builder tooling vocabulary"
+      "reason": "builder-level concept for extending coding agent capabilities"
     },
     {
       "slug": "agent-state",
       "familiarity": "Emerging",
-      "reason": "agent implementation detail, builder-level concern"
+      "reason": "builder-level concept for managing agent execution continuity"
     },
     {
       "slug": "agentic-browser",
-      "familiarity": "Emerging",
-      "reason": "emerging agent capability, builder and product audience"
+      "familiarity": "Common",
+      "reason": "concept covered in mainstream AI product and news discourse"
     },
     {
       "slug": "agentic-coding",
-      "familiarity": "Emerging",
-      "reason": "development approach for builders, not mainstream press yet"
+      "familiarity": "Common",
+      "reason": "widely used term in builder content and tech press"
     },
     {
       "slug": "agentic-engineering",
       "familiarity": "Emerging",
-      "reason": "builder workflow concept, not non-technical reader vocabulary"
+      "reason": "builder workflow concept, shows up in developer discourse"
     },
     {
       "slug": "agentic-ide",
-      "familiarity": "Emerging",
-      "reason": "builder tooling category, dev forums and hiring posts"
+      "familiarity": "Common",
+      "reason": "category name frequently encountered in AI tool coverage"
     },
     {
       "slug": "agentic-loop",
       "familiarity": "Emerging",
-      "reason": "agent mechanics, useful for builders understanding agent behavior"
+      "reason": "core agent execution pattern, builder-level conceptual vocabulary"
     },
     {
       "slug": "agentic-rag",
-      "familiarity": "Emerging",
-      "reason": "advanced RAG pattern, builder-level implementation concern"
+      "familiarity": "Specialist",
+      "reason": "advanced RAG variant requiring implementation-level understanding"
     },
     {
       "slug": "agentic-workflow",
-      "familiarity": "Emerging",
-      "reason": "builder and product vocabulary, appearing in mainstream but not quite Common"
+      "familiarity": "Common",
+      "reason": "term used broadly in AI product, founder, and press discourse"
     },
     {
       "slug": "agentops",
       "familiarity": "Emerging",
-      "reason": "production agent operations discipline, builder audience"
+      "reason": "emerging production discipline for builder teams running agents"
     },
     {
       "slug": "agents-md",
       "familiarity": "Emerging",
-      "reason": "emerging coding convention, builder-specific practice"
+      "reason": "developer convention for agentic codebases, builder-level practice"
     },
     {
       "slug": "ai-agent",
       "familiarity": "Common",
-      "reason": "mainstream press uses it routinely, board-level conversations"
+      "reason": "ubiquitous in mainstream AI discourse across all channels"
     },
     {
       "slug": "ai-app-builder",
-      "familiarity": "Emerging",
-      "reason": "tool category known to builders and tech-adjacent, not mainstream"
+      "familiarity": "Common",
+      "reason": "category name widely used in product, founder, and press coverage"
     },
     {
       "slug": "ai-code-review",
-      "familiarity": "Emerging",
-      "reason": "developer practice, not non-technical reader vocabulary"
+      "familiarity": "Common",
+      "reason": "practice discussed broadly in developer and business discourse"
     },
     {
       "slug": "ai-cogs",
-      "familiarity": "Emerging",
-      "reason": "AI business cost metric, useful for founders and PMs building AI products"
+      "familiarity": "Common",
+      "reason": "board-level business concept relevant to founders and operators"
     },
     {
       "slug": "ai-engineer",
-      "familiarity": "Emerging",
-      "reason": "role in hiring posts and builder forums, not mainstream press"
+      "familiarity": "Common",
+      "reason": "fastest-growing job title, widely covered in mainstream tech press"
     },
     {
       "slug": "ai-ethicist",
-      "familiarity": "Specialist",
-      "reason": "niche research/lab role per rubric, not mainstream business press"
+      "familiarity": "Emerging",
+      "reason": "specialized role primarily at labs and large orgs, not startup-common"
     },
     {
       "slug": "ai-fluent-generalist",
       "familiarity": "Emerging",
-      "reason": "emerging org role concept, not yet mainstream press vocabulary"
+      "reason": "org design concept surfacing in builder and enterprise AI discourse"
     },
     {
       "slug": "ai-gateway",
       "familiarity": "Emerging",
-      "reason": "infra tooling category, builder and architect audience"
+      "reason": "infrastructure layer concept relevant to builders managing API calls"
     },
     {
       "slug": "ai-governance-lead",
       "familiarity": "Emerging",
-      "reason": "compliance-driven role, not broadly understood outside enterprise AI"
+      "reason": "emerging role driven by regulation, not yet mainstream discourse"
     },
     {
       "slug": "ai-marketplace",
-      "familiarity": "Emerging",
-      "reason": "distribution concept useful for founders, not mainstream press"
+      "familiarity": "Common",
+      "reason": "concept familiar from GPT Store and app store analogies"
     },
     {
       "slug": "ai-native-founder",
-      "familiarity": "Emerging",
-      "reason": "startup community term, not mainstream business press vocabulary"
+      "familiarity": "Common",
+      "reason": "widely used identity term in founder and startup discourse"
     },
     {
       "slug": "ai-native-saas",
-      "familiarity": "Emerging",
-      "reason": "product category term for builders and investors, not mainstream"
+      "familiarity": "Common",
+      "reason": "category term in investor and founder discourse"
     },
     {
       "slug": "ai-product-manager",
-      "familiarity": "Emerging",
-      "reason": "specialized PM role, not yet mainstream business press title"
+      "familiarity": "Common",
+      "reason": "widely discussed role in mainstream tech hiring and career content"
     },
     {
       "slug": "ai-red-teamer",
       "familiarity": "Emerging",
-      "reason": "specialized safety role, known in builder and security circles"
+      "reason": "specialized adversarial role, builder/safety practitioner level"
     },
     {
       "slug": "ai-research-scientist",
       "familiarity": "Emerging",
-      "reason": "lab/academic role, not broadly useful for non-technical readers"
+      "reason": "research role at labs, known but not a common beginner encounter"
     },
     {
       "slug": "ai-rules-file",
       "familiarity": "Emerging",
-      "reason": "coding tool configuration concept, builder-specific practice"
+      "reason": "builder practice for coding tool configuration"
     },
     {
       "slug": "ai-safety-engineer",
       "familiarity": "Emerging",
-      "reason": "specialized engineering role, not mainstream business press"
+      "reason": "specialized engineering role, primarily at labs and large orgs"
     },
     {
       "slug": "ai-services-firm",
-      "familiarity": "Emerging",
-      "reason": "business model concept for AI builders and founders"
+      "familiarity": "Common",
+      "reason": "business model concept familiar to founders and operators"
     },
     {
       "slug": "ai-slop",
-      "familiarity": "Emerging",
-      "reason": "community slang term, builder and creator audience"
+      "familiarity": "Common",
+      "reason": "cultural term circulating widely in AI newsletters and discourse"
     },
     {
       "slug": "ai-solutions-architect",
       "familiarity": "Emerging",
-      "reason": "enterprise AI role, not broadly understood outside tech"
+      "reason": "enterprise role in AI deployment, builder/enterprise discourse"
     },
     {
       "slug": "ai-solutions-engineer",
       "familiarity": "Emerging",
-      "reason": "customer-facing technical role at AI vendors, builder ecosystem"
+      "reason": "customer-facing technical role in AI vendor hiring discourse"
     },
     {
       "slug": "ai-terminal",
-      "familiarity": "Emerging",
-      "reason": "developer tooling category, builder audience"
+      "familiarity": "Common",
+      "reason": "tool category discussed in builder and mainstream developer press"
     },
     {
       "slug": "ai-trainer",
-      "familiarity": "Emerging",
-      "reason": "model pipeline role, not mainstream press vocabulary"
+      "familiarity": "Common",
+      "reason": "role discussed in mainstream AI coverage and policy discourse"
     },
     {
       "slug": "ai-wrapper",
-      "familiarity": "Emerging",
-      "reason": "builder and founder vocabulary for product strategy discussions"
+      "familiarity": "Common",
+      "reason": "widely used term in founder, investor, and startup discourse"
     },
     {
       "slug": "aiaas",
-      "familiarity": "Emerging",
-      "reason": "business model term for AI founders, not mainstream press"
+      "familiarity": "Common",
+      "reason": "business model term used in tech and founder discourse"
     },
     {
       "slug": "aider",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "reason": "terminal coding tool known to builders, not mainstream audiences"
     },
     {
       "slug": "alignment",
       "familiarity": "Common",
-      "reason": "AI safety discourse in mainstream press and policy conversations"
+      "reason": "foundational AI safety concept in mainstream discourse"
     },
     {
       "slug": "amazon-q-developer",
       "familiarity": "Emerging",
-      "reason": "AWS-specific coding tool, builder audience"
+      "reason": "AWS-specific coding tool, builder/enterprise audience"
     },
     {
       "slug": "applied-ai-engineer",
-      "familiarity": "Emerging",
-      "reason": "job title in builder ecosystem, not mainstream press"
+      "familiarity": "Common",
+      "reason": "role title appearing widely in hiring and career discourse"
     },
     {
       "slug": "attention-mechanism",
       "familiarity": "Specialist",
-      "reason": "model internals, only useful to researchers and implementers"
+      "reason": "model architecture internal, engineer/researcher territory"
     },
     {
       "slug": "autogen",
       "familiarity": "Emerging",
-      "reason": "open-source agent framework, builder tooling audience"
+      "reason": "open-source multi-agent framework, builder-level tool"
     },
     {
       "slug": "background-agent",
       "familiarity": "Emerging",
-      "reason": "agent execution pattern, builder product vocabulary"
+      "reason": "async agent pattern, builder product and tooling discourse"
     },
     {
       "slug": "base-model",
       "familiarity": "Emerging",
-      "reason": "model internals term, useful for builders not non-technical readers"
+      "reason": "pre-training concept useful at builder level, not casual discourse"
     },
     {
       "slug": "base44",
       "familiarity": "Emerging",
-      "reason": "specific tool, not household name, builder audience"
+      "reason": "app builder tool known in builder circles, not mainstream"
     },
     {
       "slug": "batch-inference",
-      "familiarity": "Emerging",
-      "reason": "infrastructure optimization technique, builder and architect audience"
+      "familiarity": "Specialist",
+      "reason": "infrastructure scheduling concept, engineer-level optimization"
     },
     {
       "slug": "bolt",
-      "familiarity": "Emerging",
-      "reason": "specific tool, growing but not household name beyond builders"
+      "familiarity": "Common",
+      "reason": "widely mentioned AI app builder in founder and tech press"
     },
     {
       "slug": "byok",
-      "familiarity": "Emerging",
-      "reason": "pricing model term used in builder and SaaS circles"
+      "familiarity": "Common",
+      "reason": "pricing concept encountered in AI tool and founder discourse"
     },
     {
       "slug": "caio",
-      "familiarity": "Emerging",
-      "reason": "C-suite title appearing in enterprise AI, not yet mainstream press staple"
+      "familiarity": "Common",
+      "reason": "C-suite title covered broadly in business and tech press"
     },
     {
       "slug": "chain-of-thought",
-      "familiarity": "Emerging",
-      "reason": "prompting technique, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed prompting concept in AI newsletters and discourse"
     },
     {
       "slug": "chatgpt-agent",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, not yet mainstream press vocabulary"
+      "familiarity": "Common",
+      "reason": "mainstream OpenAI product feature covered in broad tech press"
     },
     {
       "slug": "claude-artifacts",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, Claude user and builder audience"
+      "familiarity": "Common",
+      "reason": "widely known Claude.ai feature, in mainstream AI tool discourse"
     },
     {
       "slug": "claude-code",
-      "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "familiarity": "Common",
+      "reason": "prominent agentic coding tool covered in mainstream AI discourse"
     },
     {
       "slug": "claude-hooks",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, Claude Code builder audience"
+      "familiarity": "Specialist",
+      "reason": "advanced Claude Code configuration, engineer-level implementation"
     },
     {
       "slug": "claude-md",
       "familiarity": "Emerging",
-      "reason": "coding convention specific to Claude Code users"
+      "reason": "developer convention for coding agent context, builder practice"
     },
     {
       "slug": "claude-projects",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, Claude user and builder audience"
+      "familiarity": "Common",
+      "reason": "mainstream Claude.ai feature discussed in broad AI discourse"
     },
     {
       "slug": "claude-skills",
       "familiarity": "Emerging",
-      "reason": "specific product feature, Claude Code builder audience"
+      "reason": "Claude-specific builder feature for workflow automation"
     },
     {
       "slug": "cline",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "open-source VS Code coding agent, builder-level tool"
     },
     {
       "slug": "codex-cli",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "reason": "OpenAI terminal agent, builder-level tool"
     },
     {
       "slug": "coding-agent",
-      "familiarity": "Emerging",
-      "reason": "builder tooling category, dev forums and technical press"
+      "familiarity": "Common",
+      "reason": "category term widely used in mainstream AI and developer discourse"
     },
     {
       "slug": "computer-use",
-      "familiarity": "Emerging",
-      "reason": "emerging agent capability, builder and product audience"
+      "familiarity": "Common",
+      "reason": "capability covered broadly in mainstream AI product discourse"
     },
     {
       "slug": "constitutional-ai",
       "familiarity": "Specialist",
-      "reason": "Anthropic-specific training method, researcher and lab audience"
+      "reason": "Anthropic-specific training methodology, researcher/safety territory"
     },
     {
       "slug": "context-compaction",
       "familiarity": "Emerging",
-      "reason": "agent memory management technique, builder implementation concern"
+      "reason": "agent session management technique, builder-level practice"
     },
     {
       "slug": "context-engineer",
       "familiarity": "Emerging",
-      "reason": "emerging role in builder ecosystem, not mainstream press"
+      "reason": "emerging role title in builder and AI product discourse"
     },
     {
       "slug": "context-engineering",
-      "familiarity": "Emerging",
-      "reason": "production AI practice, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in AI builder and product discourse"
     },
     {
       "slug": "context-poisoning",
       "familiarity": "Emerging",
-      "reason": "failure mode for agent builders, not non-technical reader vocabulary"
+      "reason": "failure mode concept relevant to builders designing agent systems"
     },
     {
       "slug": "context-rot",
       "familiarity": "Emerging",
-      "reason": "practical coding session failure mode, builder vocabulary"
+      "reason": "practical failure mode in long coding sessions, builder discourse"
     },
     {
       "slug": "context-stuffing",
       "familiarity": "Emerging",
-      "reason": "retrieval pattern variant, builder implementation concern"
+      "reason": "retrieval strategy concept at builder implementation level"
     },
     {
       "slug": "context-window",
       "familiarity": "Common",
-      "reason": "appears in mainstream tech press and product marketing regularly"
+      "reason": "foundational concept encountered across all AI discourse"
     },
     {
       "slug": "continue",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "open-source IDE plugin, builder-level coding tool"
     },
     {
       "slug": "continuous-batching",
       "familiarity": "Specialist",
-      "reason": "inference scheduling optimization, infra engineer audience"
+      "reason": "inference scheduling optimization, engineer/infra territory"
     },
     {
       "slug": "copilot",
       "familiarity": "Common",
-      "reason": "household name, mainstream press covers it broadly"
+      "reason": "mainstream AI coding tool widely covered in tech press"
     },
     {
       "slug": "coreweave",
       "familiarity": "Specialist",
-      "reason": "specialized GPU cloud, infra and training engineer audience"
+      "reason": "specialized GPU cloud, infra/engineer territory"
     },
     {
       "slug": "credit-based-pricing",
-      "familiarity": "Emerging",
-      "reason": "AI product pricing model, founder and PM audience"
+      "familiarity": "Common",
+      "reason": "pricing model concept in founder and operator discourse"
     },
     {
       "slug": "crewai",
       "familiarity": "Emerging",
-      "reason": "specific agent framework, builder audience"
+      "reason": "popular multi-agent framework, builder-level tool"
     },
     {
       "slug": "cursor",
-      "familiarity": "Emerging",
-      "reason": "specific tool, de facto builder standard but not household name"
+      "familiarity": "Common",
+      "reason": "de facto standard AI coding tool, widely covered in mainstream press"
     },
     {
       "slug": "cursor-background-agent",
       "familiarity": "Emerging",
-      "reason": "specific Cursor feature, builder audience"
+      "reason": "Cursor-specific async agent feature, builder-level workflow"
     },
     {
       "slug": "cursorrules",
       "familiarity": "Emerging",
-      "reason": "specific Cursor configuration file, builder audience"
+      "reason": "Cursor configuration file, builder-level coding practice"
     },
     {
       "slug": "custom-gpts",
-      "familiarity": "Emerging",
-      "reason": "OpenAI product feature, builder and power user audience"
+      "familiarity": "Common",
+      "reason": "mainstream OpenAI feature widely discussed in AI discourse"
     },
     {
       "slug": "data-moat",
-      "familiarity": "Emerging",
-      "reason": "competitive strategy concept for AI founders and investors"
+      "familiarity": "Common",
+      "reason": "strategy concept widely used in founder and investor discourse"
     },
     {
       "slug": "data-scientist",
-      "familiarity": "Emerging",
-      "reason": "established role, not uniquely AI-moment vocabulary for non-technical readers"
+      "familiarity": "Common",
+      "reason": "well-established role title in mainstream tech discourse"
     },
     {
       "slug": "deep-research",
-      "familiarity": "Emerging",
-      "reason": "agentic product feature, builder and power user audience"
+      "familiarity": "Common",
+      "reason": "consumer feature in ChatGPT and Gemini, mainstream AI discourse"
     },
     {
       "slug": "deepseek",
-      "familiarity": "Emerging",
-      "reason": "specific model family, widely covered but builder-level vocabulary"
+      "familiarity": "Common",
+      "reason": "widely covered model family, major news moment in early 2025"
     },
     {
       "slug": "design-to-code",
       "familiarity": "Emerging",
-      "reason": "builder workflow pattern, developer and PM audience"
+      "reason": "workflow concept at builder implementation level"
     },
     {
       "slug": "devin",
-      "familiarity": "Emerging",
-      "reason": "specific tool, well-known in builder circles but not household name"
+      "familiarity": "Common",
+      "reason": "widely publicized AI software engineer, mainstream press coverage"
     },
     {
       "slug": "dify",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "open-source LLMOps tool, builder-level deployment platform"
     },
     {
       "slug": "dpo",
       "familiarity": "Specialist",
-      "reason": "model training technique, researcher and ML engineer audience"
+      "reason": "alignment training method, researcher/engineer territory"
     },
     {
       "slug": "e2b",
       "familiarity": "Emerging",
-      "reason": "specific sandbox tool, builder audience"
+      "reason": "cloud sandbox for coding agents, builder-level infrastructure tool"
     },
     {
       "slug": "embeddings",
       "familiarity": "Emerging",
-      "reason": "technical concept underlying RAG, builder implementation vocabulary"
+      "reason": "technical foundation of RAG, builder implementation level"
     },
     {
       "slug": "emergent-capabilities",
-      "familiarity": "Emerging",
-      "reason": "AI research concept, appears in technical press not mainstream"
+      "familiarity": "Common",
+      "reason": "concept widely discussed in AI discourse and mainstream coverage"
     },
     {
       "slug": "enterprise-ai-adoption",
-      "familiarity": "Emerging",
-      "reason": "enterprise strategy concept, useful for founders and operators"
+      "familiarity": "Common",
+      "reason": "business concept in mainstream tech and enterprise discourse"
     },
     {
       "slug": "eu-ai-act",
       "familiarity": "Common",
-      "reason": "mainstream regulatory news, covered broadly in business press"
+      "reason": "major regulatory framework covered broadly in mainstream press"
     },
     {
       "slug": "evals",
-      "familiarity": "Emerging",
-      "reason": "AI testing practice, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in AI product and builder discourse"
     },
     {
       "slug": "evals-engineer",
       "familiarity": "Emerging",
-      "reason": "specialized role in AI teams, not mainstream press"
+      "reason": "specialized role emerging in AI product teams, builder discourse"
     },
     {
       "slug": "excessive-agency",
       "familiarity": "Emerging",
-      "reason": "agent safety risk category, builder and architect audience"
+      "reason": "agent safety concept relevant to builders designing agent systems"
     },
     {
       "slug": "extended-thinking",
-      "familiarity": "Emerging",
-      "reason": "specific model feature, builder and product audience"
+      "familiarity": "Common",
+      "reason": "model feature discussed in mainstream AI product discourse"
     },
     {
       "slug": "fde",
       "familiarity": "Emerging",
-      "reason": "fast-growing role in AI startups, builder ecosystem vocabulary"
+      "reason": "fast-growing role in AI startups, builder/enterprise hiring discourse"
     },
     {
       "slug": "few-shot-prompting",
       "familiarity": "Emerging",
-      "reason": "prompting technique, builder vocabulary per rubric"
+      "reason": "prompting technique at builder implementation level"
     },
     {
       "slug": "figma",
-      "familiarity": "Emerging",
-      "reason": "specific tool, design and builder audience, not household name broadly"
+      "familiarity": "Common",
+      "reason": "ubiquitous design tool widely known across product and builder roles"
     },
     {
       "slug": "figma-make",
       "familiarity": "Emerging",
-      "reason": "specific product feature, builder and design audience"
+      "reason": "Figma's AI builder, emerging tool known in builder/design circles"
     },
     {
       "slug": "fine-tuned-model-deployment",
       "familiarity": "Specialist",
-      "reason": "infra concern for teams managing custom model weights"
+      "reason": "infrastructure complexity of serving custom fine-tuned models"
     },
     {
       "slug": "fine-tuning",
-      "familiarity": "Emerging",
-      "reason": "model customization technique, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in mainstream AI discourse"
     },
     {
       "slug": "foundation-model",
       "familiarity": "Common",
-      "reason": "becoming mainstream in tech press and policy discourse"
+      "reason": "standard term in mainstream AI coverage and discourse"
     },
     {
       "slug": "freemium-ai",
-      "familiarity": "Emerging",
-      "reason": "pricing strategy concept for AI founders and PMs"
+      "familiarity": "Common",
+      "reason": "business model concept in founder and product discourse"
     },
     {
       "slug": "frontier-model",
       "familiarity": "Common",
-      "reason": "appears regularly in mainstream tech and business press"
+      "reason": "widely used term in mainstream AI and tech press"
     },
     {
       "slug": "full-stack-builder",
-      "familiarity": "Emerging",
-      "reason": "emerging role identity in builder community, not mainstream press"
+      "familiarity": "Common",
+      "reason": "role concept in founder and builder discourse"
     },
     {
       "slug": "function-calling",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder implementation vocabulary"
+      "reason": "API mechanism at builder implementation level"
     },
     {
       "slug": "gemini-cli",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "reason": "Google terminal agent, builder-level tool"
     },
     {
       "slug": "generative-ai",
       "familiarity": "Common",
-      "reason": "ubiquitous in mainstream press, board meetings, general discourse"
+      "reason": "foundational term in all mainstream AI discourse"
     },
     {
       "slug": "git-worktree",
       "familiarity": "Specialist",
-      "reason": "Git internals feature, developer implementation detail"
+      "reason": "Git implementation detail used in parallel agent workflows"
     },
     {
       "slug": "google-adk",
       "familiarity": "Emerging",
-      "reason": "specific framework, builder audience"
+      "reason": "Google's agent framework, builder-level open-source tool"
     },
     {
       "slug": "google-ai-studio",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "reason": "Google prototyping tool, known to builders working with Gemini"
     },
     {
       "slug": "google-gems",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, Gemini user and builder audience"
+      "familiarity": "Common",
+      "reason": "Gemini app feature analogous to Custom GPTs, mainstream exposure"
     },
     {
       "slug": "gpu-cloud",
-      "familiarity": "Emerging",
-      "reason": "infra concept, useful for founders and technical decision-makers"
+      "familiarity": "Common",
+      "reason": "concept in mainstream AI infrastructure and cost discourse"
     },
     {
       "slug": "groq",
       "familiarity": "Emerging",
-      "reason": "specific infra tool, builder and architect audience"
+      "reason": "inference API known for speed, builder-level infrastructure tool"
     },
     {
       "slug": "grounding",
       "familiarity": "Emerging",
-      "reason": "RAG-adjacent technique, builder and product vocabulary"
+      "reason": "retrieval/sourcing concept at builder implementation level"
     },
     {
       "slug": "gtm-motion",
-      "familiarity": "Emerging",
-      "reason": "business strategy jargon, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "core founder and business strategy concept"
     },
     {
       "slug": "guardrails",
-      "familiarity": "Emerging",
-      "reason": "AI safety concept, builder and product audience; not yet mainstream"
+      "familiarity": "Common",
+      "reason": "widely used concept in AI safety and product discourse"
     },
     {
       "slug": "hallucination",
       "familiarity": "Common",
-      "reason": "ubiquitous in mainstream press, general professional discourse"
+      "reason": "core concept ubiquitous in all mainstream AI discourse"
     },
     {
       "slug": "head-of-ai",
-      "familiarity": "Emerging",
-      "reason": "senior role, not yet mainstream press staple per rubric"
+      "familiarity": "Common",
+      "reason": "widely recognized senior role title in mainstream tech discourse"
     },
     {
       "slug": "hugging-face",
       "familiarity": "Emerging",
-      "reason": "specific platform, builder and ML community, not household name"
+      "reason": "central open-source AI hub, known to builders and technical readers"
     },
     {
       "slug": "human-in-the-loop",
       "familiarity": "Common",
-      "reason": "appears regularly in mainstream AI discourse and policy discussions"
+      "reason": "widely used concept in AI product and governance discourse"
     },
     {
       "slug": "human-in-the-loop-design",
       "familiarity": "Emerging",
-      "reason": "design pattern concept, builder and product vocabulary"
+      "reason": "implementation-level design pattern for builder practitioners"
     },
     {
       "slug": "hybrid-pricing",
-      "familiarity": "Emerging",
-      "reason": "AI pricing model, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "business model concept in founder and operator discourse"
     },
     {
       "slug": "hyperscaler",
-      "familiarity": "Emerging",
-      "reason": "infra/business term, useful for founders not general readers"
+      "familiarity": "Common",
+      "reason": "widely used term in tech business and infrastructure discourse"
     },
     {
       "slug": "indirect-prompt-injection",
       "familiarity": "Emerging",
-      "reason": "agent security attack, builder and security audience"
+      "reason": "agent attack vector, important for builders designing agent systems"
     },
     {
       "slug": "inference",
-      "familiarity": "Emerging",
-      "reason": "technical term, useful for builders and PMs, not non-technical readers"
+      "familiarity": "Common",
+      "reason": "foundational concept increasingly discussed in mainstream AI coverage"
     },
     {
       "slug": "inference-api",
       "familiarity": "Emerging",
-      "reason": "infra concept per rubric, builder audience"
+      "reason": "API infrastructure concept at builder implementation level"
     },
     {
       "slug": "inference-cost",
-      "familiarity": "Emerging",
-      "reason": "AI business metric, founder and PM audience"
+      "familiarity": "Common",
+      "reason": "business cost concept in founder, operator, and investor discourse"
     },
     {
       "slug": "inference-time-compute",
-      "familiarity": "Emerging",
-      "reason": "model scaling concept, builder and researcher audience"
+      "familiarity": "Common",
+      "reason": "widely discussed concept explaining reasoning model behavior"
     },
     {
       "slug": "instruct-model",
       "familiarity": "Emerging",
-      "reason": "model internals distinction, useful for builders not non-technical readers"
+      "reason": "model taxonomy concept at builder implementation level"
     },
     {
       "slug": "iterative-prototyping",
       "familiarity": "Emerging",
-      "reason": "development practice, builder and product vocabulary"
+      "reason": "AI-assisted development methodology, builder practice"
     },
     {
       "slug": "jailbreak",
       "familiarity": "Common",
-      "reason": "mainstream press covers it, general AI literacy vocabulary"
+      "reason": "widely known concept in mainstream AI safety and media coverage"
     },
     {
       "slug": "jetbrains-ai",
       "familiarity": "Emerging",
-      "reason": "specific tool, JetBrains ecosystem builders"
+      "reason": "IDE-native AI tool for JetBrains ecosystem, builder audience"
     },
     {
       "slug": "jules",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience, not household name"
+      "reason": "Google async coding agent, known in builder circles"
     },
     {
       "slug": "kv-cache",
       "familiarity": "Specialist",
-      "reason": "model-internal memory optimization, infra engineer audience"
+      "reason": "model-internal memory optimization, engineer/infra territory"
     },
     {
       "slug": "langflow",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "visual agent builder on LangChain, builder-level tool"
     },
     {
       "slug": "langgraph",
       "familiarity": "Emerging",
-      "reason": "specific framework, builder audience"
+      "reason": "Python/TS agent framework, builder-level orchestration tool"
     },
     {
       "slug": "llama-4",
-      "familiarity": "Emerging",
-      "reason": "specific model family, builder and ML community audience"
+      "familiarity": "Common",
+      "reason": "major open-weight model family covered in mainstream AI press"
     },
     {
       "slug": "llama-stack",
-      "familiarity": "Emerging",
-      "reason": "specific framework, builder audience"
+      "familiarity": "Specialist",
+      "reason": "Meta's framework for Llama deployment, engineer/builder infra level"
     },
     {
       "slug": "llm",
       "familiarity": "Common",
-      "reason": "ubiquitous acronym in mainstream press and general discourse"
+      "reason": "foundational acronym in all mainstream AI discourse"
     },
     {
       "slug": "llm-as-judge",
       "familiarity": "Emerging",
-      "reason": "eval technique, builder and AI product vocabulary"
+      "reason": "eval technique at builder implementation level"
     },
     {
       "slug": "llm-benchmark",
-      "familiarity": "Emerging",
-      "reason": "model comparison concept, builder and product audience"
+      "familiarity": "Common",
+      "reason": "concept widely discussed in AI product and press coverage"
     },
     {
       "slug": "llm-tracing",
       "familiarity": "Emerging",
-      "reason": "production debugging practice, builder and LLMOps audience"
+      "reason": "production debugging practice for builder teams"
     },
     {
       "slug": "llmops",
       "familiarity": "Emerging",
-      "reason": "operational discipline for AI systems, builder and platform audience"
+      "reason": "operational discipline for LLM production systems, builder level"
     },
     {
       "slug": "llmops-engineer",
       "familiarity": "Emerging",
-      "reason": "specialized role, builder ecosystem and hiring posts"
+      "reason": "specialized ops role for LLM systems, builder/enterprise discourse"
     },
     {
       "slug": "llms-txt",
       "familiarity": "Emerging",
-      "reason": "emerging convention for AI-readable docs, builder audience"
+      "reason": "documentation convention for AI agents, builder practice"
     },
     {
       "slug": "local-model",
-      "familiarity": "Emerging",
-      "reason": "model deployment option, useful for builders and privacy-conscious users"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in AI privacy and tool discourse"
     },
     {
       "slug": "long-running-agent",
       "familiarity": "Emerging",
-      "reason": "agent execution pattern, builder and product vocabulary"
+      "reason": "async agent pattern concept, builder product discourse"
     },
     {
       "slug": "lovable",
-      "familiarity": "Emerging",
-      "reason": "specific tool, growing but not household name beyond builders"
+      "familiarity": "Common",
+      "reason": "widely known AI app builder in founder and mainstream discourse"
     },
     {
       "slug": "lpu",
       "familiarity": "Specialist",
-      "reason": "specialized hardware chip, infra and hardware engineer audience"
+      "reason": "custom chip architecture, infra/hardware engineer territory"
     },
     {
       "slug": "mcp",
-      "familiarity": "Emerging",
-      "reason": "becoming standard builder vocabulary, not yet mainstream press"
+      "familiarity": "Common",
+      "reason": "widely discussed protocol in mainstream AI and builder discourse"
     },
     {
       "slug": "mcp-server",
-      "familiarity": "Emerging",
-      "reason": "builder tooling concept, dev forums and technical blog posts"
+      "familiarity": "Common",
+      "reason": "widely discussed concept as MCP adoption grows broadly"
     },
     {
       "slug": "mechanistic-interpretability",
       "familiarity": "Specialist",
-      "reason": "research-level model analysis, lab and researcher audience"
+      "reason": "deep research area for AI safety/interpretability researchers"
     },
     {
       "slug": "memory-layer",
       "familiarity": "Emerging",
-      "reason": "agent architecture component, builder implementation vocabulary"
+      "reason": "agent memory architecture concept at builder implementation level"
     },
     {
       "slug": "memory-management",
       "familiarity": "Emerging",
-      "reason": "agent design concern, builder vocabulary"
+      "reason": "agent design consideration at builder implementation level"
     },
     {
       "slug": "memory-poisoning",
-      "familiarity": "Emerging",
-      "reason": "agent security attack, builder and security audience"
+      "familiarity": "Specialist",
+      "reason": "advanced agent attack vector, security researcher territory"
     },
     {
       "slug": "mixture-of-experts",
       "familiarity": "Specialist",
-      "reason": "model architecture detail, researcher and ML engineer audience"
+      "reason": "model architecture internal, engineer/researcher territory"
     },
     {
       "slug": "ml-engineer",
-      "familiarity": "Emerging",
-      "reason": "established technical role per rubric, not mainstream press vocabulary"
+      "familiarity": "Common",
+      "reason": "widely recognized role in mainstream tech hiring discourse"
     },
     {
       "slug": "mlops",
       "familiarity": "Emerging",
-      "reason": "operational practice, builder and platform engineer audience"
+      "reason": "ML production practice, known to builders and technical readers"
     },
     {
       "slug": "modal",
       "familiarity": "Emerging",
-      "reason": "specific infra tool, builder audience"
+      "reason": "serverless GPU tool, builder-level infrastructure"
     },
     {
       "slug": "model-card",
       "familiarity": "Emerging",
-      "reason": "model documentation concept, builder and responsible AI audience"
+      "reason": "model documentation standard, useful at builder evaluation level"
     },
     {
       "slug": "model-collapse",
       "familiarity": "Emerging",
-      "reason": "AI training risk, researcher and technically curious audience"
+      "reason": "AI training risk concept, surfacing in builder and AI discourse"
     },
     {
       "slug": "model-commoditization",
-      "familiarity": "Emerging",
-      "reason": "business strategy concept, founder and investor audience"
+      "familiarity": "Common",
+      "reason": "strategy concept widely discussed in founder and investor discourse"
     },
     {
       "slug": "model-context-protocol",
-      "familiarity": "Emerging",
-      "reason": "open standard for builders, technical blog posts and dev tooling"
+      "familiarity": "Common",
+      "reason": "widely discussed open standard in mainstream AI discourse"
     },
     {
       "slug": "model-distillation",
       "familiarity": "Specialist",
-      "reason": "model training technique per rubric, ML engineer audience"
+      "reason": "model compression training technique, engineer/researcher territory"
     },
     {
       "slug": "model-fallback",
       "familiarity": "Emerging",
-      "reason": "reliability pattern, builder and architect audience"
+      "reason": "reliability pattern for production AI systems, builder practice"
     },
     {
       "slug": "model-layer-vs-app-layer",
-      "familiarity": "Emerging",
-      "reason": "strategic framing for founders and investors"
+      "familiarity": "Common",
+      "reason": "strategic framing widely used in investor and founder discourse"
     },
     {
       "slug": "model-router",
       "familiarity": "Emerging",
-      "reason": "infra pattern, builder and architect audience"
+      "reason": "request routing infrastructure concept at builder level"
     },
     {
       "slug": "model-safety-evaluation",
       "familiarity": "Emerging",
-      "reason": "safety testing practice, builder and responsible AI audience"
+      "reason": "structured safety testing practice, builder/safety practitioner level"
     },
     {
       "slug": "model-serving",
-      "familiarity": "Specialist",
-      "reason": "infra layer concept per rubric, platform engineer audience"
+      "familiarity": "Emerging",
+      "reason": "deployment infrastructure concept at builder implementation level"
     },
     {
       "slug": "model-weights",
-      "familiarity": "Emerging",
-      "reason": "model internals term, useful for builders not non-technical readers"
+      "familiarity": "Common",
+      "reason": "widely referenced concept in open-source AI discourse"
     },
     {
       "slug": "multi-agent",
-      "familiarity": "Emerging",
-      "reason": "agent architecture concept, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed architecture concept in mainstream AI discourse"
     },
     {
       "slug": "multi-turn-conversation",
       "familiarity": "Emerging",
-      "reason": "conversation design pattern, builder implementation vocabulary"
+      "reason": "conversation design pattern at builder implementation level"
     },
     {
       "slug": "multimodal-input",
-      "familiarity": "Emerging",
-      "reason": "model capability concept, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed capability in mainstream AI product discourse"
     },
     {
       "slug": "multimodal-model",
-      "familiarity": "Emerging",
-      "reason": "model category, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "standard category term in mainstream AI coverage"
     },
     {
       "slug": "multimodal-output",
-      "familiarity": "Emerging",
-      "reason": "model capability concept, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "capability discussed in mainstream AI product and press coverage"
     },
     {
       "slug": "n8n",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder and automation audience"
+      "reason": "open-source workflow automation tool, builder-level platform"
     },
     {
       "slug": "notebooklm",
-      "familiarity": "Emerging",
-      "reason": "specific tool, growing but not household name broadly"
+      "familiarity": "Common",
+      "reason": "widely known Google AI tool in mainstream AI discourse"
     },
     {
       "slug": "notebooklm-audio-overview",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, NotebookLM user audience"
+      "familiarity": "Common",
+      "reason": "well-known NotebookLM feature in mainstream AI discourse"
     },
     {
       "slug": "o3-o4",
-      "familiarity": "Emerging",
-      "reason": "specific model family, builder and power user audience"
+      "familiarity": "Common",
+      "reason": "major OpenAI model family widely covered in mainstream press"
     },
     {
       "slug": "ollama",
       "familiarity": "Emerging",
-      "reason": "specific local model tool, builder audience"
+      "reason": "local model runner widely used by builders and technical readers"
     },
     {
       "slug": "open-source-model",
-      "familiarity": "Emerging",
-      "reason": "model category, useful for builders and technically curious"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in mainstream AI and tech discourse"
     },
     {
       "slug": "open-weights",
-      "familiarity": "Emerging",
-      "reason": "model distribution concept, builder vocabulary"
+      "familiarity": "Common",
+      "reason": "important distinction discussed in mainstream AI discourse"
     },
     {
       "slug": "openai-agentkit",
       "familiarity": "Emerging",
-      "reason": "specific toolkit, builder audience"
+      "reason": "OpenAI agent development toolkit, builder-level tool"
     },
     {
       "slug": "openai-agents-sdk",
       "familiarity": "Emerging",
-      "reason": "specific framework, builder audience"
+      "reason": "OpenAI's open-source agent framework, builder-level tool"
     },
     {
       "slug": "openai-compatible-api",
       "familiarity": "Specialist",
-      "reason": "infra/API compatibility concept per rubric, developer audience"
+      "reason": "API compatibility standard, implementation detail for engineers"
     },
     {
       "slug": "openai-operator",
-      "familiarity": "Emerging",
-      "reason": "specific product, builder and power user audience"
+      "familiarity": "Common",
+      "reason": "OpenAI computer-use agent widely covered in mainstream press"
     },
     {
       "slug": "openai-responses-api",
-      "familiarity": "Emerging",
-      "reason": "specific API, builder audience"
+      "familiarity": "Specialist",
+      "reason": "OpenAI API plumbing detail, engineer/builder infrastructure level"
     },
     {
       "slug": "openclaw",
       "familiarity": "Emerging",
-      "reason": "specific tool, notable but builder audience"
+      "reason": "viral open-source agent, known in builder circles"
     },
     {
       "slug": "opencode",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "open-source terminal coding agent, builder-level tool"
     },
     {
       "slug": "openhands",
       "familiarity": "Emerging",
-      "reason": "specific open-source tool, builder audience"
+      "reason": "open-source Devin alternative, known to builder community"
     },
     {
       "slug": "opentelemetry-for-ai",
       "familiarity": "Specialist",
-      "reason": "observability standard extension, infra and platform engineer audience"
+      "reason": "observability standard extension, engineer/infra territory"
     },
     {
       "slug": "orchestration",
-      "familiarity": "Emerging",
-      "reason": "agent coordination concept, builder and architect vocabulary"
+      "familiarity": "Common",
+      "reason": "widely used concept in AI system and product discourse"
     },
     {
       "slug": "outcome-based-pricing",
-      "familiarity": "Emerging",
-      "reason": "AI pricing model, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "business model concept in founder and operator discourse"
     },
     {
       "slug": "output-validation",
       "familiarity": "Emerging",
-      "reason": "production AI practice, builder vocabulary"
+      "reason": "quality assurance practice at builder implementation level"
     },
     {
       "slug": "parallel-agents",
       "familiarity": "Emerging",
-      "reason": "agent execution pattern, builder vocabulary"
+      "reason": "agent workflow pattern, builder-level development practice"
     },
     {
       "slug": "per-agent-pricing",
-      "familiarity": "Emerging",
-      "reason": "emerging AI pricing model, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "emerging pricing model discussed in founder and business discourse"
     },
     {
       "slug": "perplexity",
-      "familiarity": "Emerging",
-      "reason": "specific tool, growing but not household name broadly"
+      "familiarity": "Common",
+      "reason": "widely known AI search tool in mainstream AI discourse"
     },
     {
       "slug": "plan-and-execute",
       "familiarity": "Emerging",
-      "reason": "agent design pattern, builder vocabulary"
+      "reason": "agent design pattern at builder implementation level"
     },
     {
       "slug": "post-training",
       "familiarity": "Specialist",
-      "reason": "model training phase, ML engineer and researcher audience"
+      "reason": "model development phase detail, researcher/engineer territory"
     },
     {
       "slug": "private-deployment",
-      "familiarity": "Emerging",
-      "reason": "infra option, useful for enterprise founders and architects"
+      "familiarity": "Common",
+      "reason": "infrastructure concept in enterprise and compliance discourse"
     },
     {
       "slug": "product-led-growth",
-      "familiarity": "Emerging",
-      "reason": "GTM strategy term, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "core go-to-market concept in founder and business discourse"
     },
     {
       "slug": "productized-service",
-      "familiarity": "Emerging",
-      "reason": "business model concept, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "business model concept in founder and solo builder discourse"
     },
     {
       "slug": "project-astra",
-      "familiarity": "Emerging",
-      "reason": "specific Google research prototype, builder and enthusiast audience"
+      "familiarity": "Common",
+      "reason": "Google's flagship AI assistant prototype, mainstream press coverage"
     },
     {
       "slug": "project-mariner",
-      "familiarity": "Emerging",
-      "reason": "specific Google agent product, builder audience"
+      "familiarity": "Common",
+      "reason": "Google web agent covered in mainstream AI press"
     },
     {
       "slug": "prompt-caching",
       "familiarity": "Emerging",
-      "reason": "API cost optimization feature, builder audience"
+      "reason": "API cost optimization feature, builder implementation level"
     },
     {
       "slug": "prompt-chaining",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder vocabulary"
+      "reason": "multi-step prompting pattern at builder implementation level"
     },
     {
       "slug": "prompt-engineer",
-      "familiarity": "Emerging",
-      "reason": "role in AI ecosystem, not mainstream press staple anymore"
+      "familiarity": "Common",
+      "reason": "widely known role title in mainstream tech discourse"
     },
     {
       "slug": "prompt-engineering",
       "familiarity": "Common",
-      "reason": "mainstream press uses it, general professional AI literacy"
+      "reason": "foundational concept in all mainstream AI discourse"
     },
     {
       "slug": "prompt-versioning",
       "familiarity": "Emerging",
-      "reason": "production AI hygiene practice, builder vocabulary"
+      "reason": "production AI hygiene practice, builder implementation level"
     },
     {
       "slug": "quantization",
       "familiarity": "Specialist",
-      "reason": "model compression technique, infra and ML engineer audience"
+      "reason": "model compression technique, engineer/infra territory"
     },
     {
       "slug": "rag",
       "familiarity": "Common",
-      "reason": "becoming mainstream in tech press and product discussions"
+      "reason": "widely discussed concept at conversational level in AI discourse"
     },
     {
       "slug": "react-prompting",
       "familiarity": "Specialist",
-      "reason": "specific prompting pattern underlying agent internals, researcher/implementer"
+      "reason": "named prompting algorithm, research/engineer territory"
     },
     {
       "slug": "reasoning-model",
-      "familiarity": "Emerging",
-      "reason": "model category appearing in builder and product press, not mainstream"
+      "familiarity": "Common",
+      "reason": "widely discussed model category in mainstream AI coverage"
     },
     {
       "slug": "red-teaming",
-      "familiarity": "Emerging",
-      "reason": "AI safety practice, builder and security audience"
+      "familiarity": "Common",
+      "reason": "widely discussed AI safety practice in mainstream discourse"
     },
     {
       "slug": "reflection-pattern",
       "familiarity": "Emerging",
-      "reason": "agent design pattern, builder vocabulary"
+      "reason": "agent design pattern at builder implementation level"
     },
     {
       "slug": "reinforcement-fine-tuning",
       "familiarity": "Specialist",
-      "reason": "advanced training technique, ML engineer and researcher audience"
+      "reason": "advanced training customization technique, researcher/engineer level"
     },
     {
       "slug": "replit",
-      "familiarity": "Emerging",
-      "reason": "specific tool per rubric, builder audience"
+      "familiarity": "Common",
+      "reason": "widely known AI app builder platform in mainstream discourse"
     },
     {
       "slug": "retrieval-augmented-generation",
-      "familiarity": "Emerging",
-      "reason": "full name of RAG, builder implementation vocabulary"
+      "familiarity": "Common",
+      "reason": "full-form name for RAG, widely discussed concept"
     },
     {
       "slug": "rlhf",
-      "familiarity": "Specialist",
-      "reason": "training technique per rubric, ML engineer and researcher audience"
+      "familiarity": "Common",
+      "reason": "widely referenced alignment technique in mainstream AI discourse"
     },
     {
       "slug": "role-prompting",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder vocabulary"
+      "reason": "prompting technique at builder implementation level"
     },
     {
       "slug": "runpod",
       "familiarity": "Emerging",
-      "reason": "specific GPU cloud tool, builder and infra audience"
+      "reason": "GPU cloud for builders, known in developer community"
     },
     {
       "slug": "sandboxing",
       "familiarity": "Emerging",
-      "reason": "agent safety infrastructure, builder and security audience"
+      "reason": "agent safety infrastructure concept, builder implementation level"
     },
     {
       "slug": "scaling-laws",
       "familiarity": "Specialist",
-      "reason": "research concept, ML researcher and lab audience"
+      "reason": "empirical ML research concept, researcher/engineer territory"
     },
     {
       "slug": "seat-based-pricing",
-      "familiarity": "Emerging",
-      "reason": "SaaS pricing model, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "classic SaaS pricing concept in mainstream business discourse"
     },
     {
       "slug": "self-reflection",
       "familiarity": "Emerging",
-      "reason": "prompting technique variant, builder vocabulary"
+      "reason": "model self-critique prompting pattern, builder practice level"
     },
     {
       "slug": "serverless-inference",
       "familiarity": "Specialist",
-      "reason": "infra deployment pattern, platform engineer audience"
+      "reason": "infrastructure deployment model, engineer/infra territory"
     },
     {
       "slug": "sft",
       "familiarity": "Specialist",
-      "reason": "model training phase per rubric, ML engineer audience"
+      "reason": "specific training step in alignment pipeline, researcher/engineer level"
     },
     {
       "slug": "slash-commands",
       "familiarity": "Emerging",
-      "reason": "specific Claude Code feature, builder audience"
+      "reason": "Claude Code workflow shortcut, builder implementation feature"
     },
     {
       "slug": "smolagents",
-      "familiarity": "Emerging",
-      "reason": "specific open-source framework, builder audience"
+      "familiarity": "Specialist",
+      "reason": "minimalist Hugging Face agent framework, niche builder/researcher tool"
     },
     {
       "slug": "sora",
-      "familiarity": "Emerging",
-      "reason": "specific tool, notable but builder and creator audience primarily"
+      "familiarity": "Common",
+      "reason": "widely known OpenAI video generation model, mainstream press"
     },
     {
       "slug": "spec-driven-development",
       "familiarity": "Emerging",
-      "reason": "development pattern, builder vocabulary"
+      "reason": "AI development methodology, builder practice and discourse"
     },
     {
       "slug": "spec-writing",
       "familiarity": "Emerging",
-      "reason": "development practice, builder and PM vocabulary"
+      "reason": "AI-era development practice, builder workflow concept"
     },
     {
       "slug": "speculative-decoding",
       "familiarity": "Specialist",
-      "reason": "inference optimization technique per rubric, infra engineer audience"
+      "reason": "inference optimization technique, engineer/infra territory"
     },
     {
       "slug": "structured-output",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder vocabulary"
+      "reason": "model output control pattern at builder implementation level"
     },
     {
       "slug": "subagents",
-      "familiarity": "Emerging",
-      "reason": "Claude Code-specific agent concept, builder audience"
+      "familiarity": "Specialist",
+      "reason": "Claude Code-specific parallel execution concept, engineer level"
     },
     {
       "slug": "supabase",
       "familiarity": "Emerging",
-      "reason": "specific tool per rubric, builder audience"
+      "reason": "backend-as-a-service widely used by builders, developer community"
     },
     {
       "slug": "supervisor-pattern",
       "familiarity": "Emerging",
-      "reason": "multi-agent architecture pattern, builder vocabulary"
+      "reason": "multi-agent architecture pattern at builder implementation level"
     },
     {
       "slug": "swe-bench",
       "familiarity": "Emerging",
-      "reason": "coding agent benchmark, builder and product audience"
+      "reason": "coding agent benchmark, known in builder and AI community"
     },
     {
       "slug": "sycophancy",
-      "familiarity": "Emerging",
-      "reason": "model behavior issue, builder and AI product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed model behavior problem in AI discourse"
     },
     {
       "slug": "synthetic-data",
-      "familiarity": "Emerging",
-      "reason": "training data concept, builder and ML audience"
+      "familiarity": "Common",
+      "reason": "widely discussed concept in AI training and data discourse"
     },
     {
       "slug": "system-prompt",
-      "familiarity": "Emerging",
-      "reason": "core builder concept, not yet mainstream non-technical vocabulary"
+      "familiarity": "Common",
+      "reason": "foundational concept in mainstream AI product discourse"
     },
     {
       "slug": "system-prompt-injection",
-      "familiarity": "Emerging",
-      "reason": "AI security attack, builder and security audience"
+      "familiarity": "Common",
+      "reason": "widely discussed AI security concept in mainstream discourse"
     },
     {
       "slug": "tabnine",
       "familiarity": "Emerging",
-      "reason": "specific tool, enterprise builder audience"
+      "reason": "enterprise AI code completion tool, builder/enterprise audience"
     },
     {
       "slug": "task-decomposition",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder vocabulary"
+      "reason": "agent and prompt design practice at builder implementation level"
     },
     {
       "slug": "tdd-with-ai",
       "familiarity": "Emerging",
-      "reason": "development practice combining TDD and AI, builder vocabulary"
+      "reason": "AI-assisted development methodology, builder practice"
     },
     {
       "slug": "tech-lead-ai",
       "familiarity": "Emerging",
-      "reason": "team role, builder ecosystem vocabulary"
+      "reason": "senior engineering role on AI teams, builder/enterprise discourse"
     },
     {
       "slug": "temperature",
-      "familiarity": "Emerging",
-      "reason": "model internals setting, useful for builders not non-technical readers"
+      "familiarity": "Common",
+      "reason": "widely discussed model parameter in mainstream AI discourse"
     },
     {
       "slug": "together-ai",
       "familiarity": "Emerging",
-      "reason": "specific infra tool, builder audience"
+      "reason": "open-weight model inference API, builder-level infrastructure"
     },
     {
       "slug": "token",
-      "familiarity": "Emerging",
-      "reason": "model internals unit, useful for builders; non-technical readers don't need it"
+      "familiarity": "Common",
+      "reason": "foundational unit of LLM operation, widely discussed in all discourse"
     },
     {
       "slug": "token-budget",
       "familiarity": "Emerging",
-      "reason": "reasoning model setting, builder vocabulary"
+      "reason": "reasoning model parameter at builder implementation level"
     },
     {
       "slug": "token-fatigue",
-      "familiarity": "Emerging",
-      "reason": "pricing friction concept, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "buyer sentiment concept in founder and operator discourse"
     },
     {
       "slug": "tool-calling-pattern",
       "familiarity": "Emerging",
-      "reason": "pattern/technique per rubric, builder vocabulary"
+      "reason": "agent architecture pattern at builder implementation level"
     },
     {
       "slug": "tool-poisoning",
-      "familiarity": "Emerging",
-      "reason": "agent security attack, builder and security audience"
+      "familiarity": "Specialist",
+      "reason": "advanced MCP attack vector, security researcher/engineer territory"
     },
     {
       "slug": "tool-use",
-      "familiarity": "Emerging",
-      "reason": "agent capability concept, builder and product vocabulary"
+      "familiarity": "Common",
+      "reason": "widely discussed agent capability in mainstream AI discourse"
     },
     {
       "slug": "trae",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience"
+      "reason": "ByteDance AI editor, known in builder circles"
     },
     {
       "slug": "transformer",
-      "familiarity": "Emerging",
-      "reason": "model architecture, technically curious but not non-technical reader vocabulary"
+      "familiarity": "Common",
+      "reason": "foundational architecture term widely referenced in AI discourse"
     },
     {
       "slug": "tree-of-thought",
       "familiarity": "Specialist",
-      "reason": "advanced prompting technique, researcher and specialist builder audience"
+      "reason": "advanced prompting algorithm, researcher/engineer territory"
     },
     {
       "slug": "ttft",
       "familiarity": "Specialist",
-      "reason": "infra latency metric, platform and performance engineer audience"
+      "reason": "inference latency metric, engineer/infra territory"
     },
     {
       "slug": "usage-based-pricing",
-      "familiarity": "Emerging",
-      "reason": "AI pricing model, founder and operator audience"
+      "familiarity": "Common",
+      "reason": "standard billing model concept in founder and operator discourse"
     },
     {
       "slug": "v0",
-      "familiarity": "Emerging",
-      "reason": "specific tool per rubric, builder audience"
+      "familiarity": "Common",
+      "reason": "widely known Vercel UI generator in builder and founder discourse"
     },
     {
       "slug": "vector-database",
       "familiarity": "Emerging",
-      "reason": "infra component, builder implementation vocabulary"
+      "reason": "RAG infrastructure component at builder implementation level"
     },
     {
       "slug": "veo",
-      "familiarity": "Emerging",
-      "reason": "specific tool, builder and creator audience"
+      "familiarity": "Common",
+      "reason": "Google's video generation model covered in mainstream AI press"
     },
     {
       "slug": "vercel",
-      "familiarity": "Emerging",
-      "reason": "specific infra tool per rubric, builder audience"
+      "familiarity": "Common",
+      "reason": "widely known deployment platform in builder and product discourse"
     },
     {
       "slug": "vercel-ai-sdk",
       "familiarity": "Emerging",
-      "reason": "specific open-source library, builder audience"
+      "reason": "TypeScript AI library for builders in the Vercel/Next.js ecosystem"
     },
     {
       "slug": "vertical-ai",
-      "familiarity": "Emerging",
-      "reason": "product strategy concept, founder and investor audience"
+      "familiarity": "Common",
+      "reason": "widely used business category in founder and investor discourse"
     },
     {
       "slug": "vibe-coder",
-      "familiarity": "Emerging",
-      "reason": "community role identity, builder ecosystem vocabulary"
+      "familiarity": "Common",
+      "reason": "widely used identity term in builder and mainstream AI discourse"
     },
     {
       "slug": "vibe-coding",
       "familiarity": "Common",
-      "reason": "Karpathy coinage now in mainstream tech and business press"
+      "reason": "widely known term coined by Karpathy, mainstream AI discourse"
     },
     {
       "slug": "vibe-stack",
       "familiarity": "Emerging",
-      "reason": "builder community term, not mainstream press"
+      "reason": "builder community term for personal AI tool combinations"
     },
     {
       "slug": "visual-agent-builder",
       "familiarity": "Emerging",
-      "reason": "tool category concept, builder audience"
+      "reason": "no-code agent design tool category, builder product discourse"
     },
     {
       "slug": "vllm",
       "familiarity": "Specialist",
-      "reason": "open-source inference server per rubric, infra engineer audience"
+      "reason": "open-source inference server, engineer/infra territory"
     },
     {
       "slug": "warp",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience"
+      "reason": "agentic terminal environment, builder-level development tool"
     },
     {
       "slug": "windsurf",
-      "familiarity": "Emerging",
-      "reason": "specific tool, builder audience"
+      "familiarity": "Common",
+      "reason": "widely known AI-native code editor in builder and mainstream discourse"
     },
     {
       "slug": "windsurf-cascade",
-      "familiarity": "Emerging",
-      "reason": "specific product feature, Windsurf builder audience"
+      "familiarity": "Specialist",
+      "reason": "Windsurf-internal agentic system, niche builder/engineer detail"
     },
     {
       "slug": "world-model",
       "familiarity": "Specialist",
-      "reason": "research-level AI concept, researcher and lab audience"
+      "reason": "AI research concept for environment modeling, researcher territory"
     },
     {
       "slug": "zed",
       "familiarity": "Emerging",
-      "reason": "specific tool, builder audience"
+      "reason": "high-performance AI code editor, known in builder community"
     },
     {
       "slug": "zero-shot-prompting",
       "familiarity": "Emerging",
-      "reason": "prompting technique per rubric, builder vocabulary"
+      "reason": "prompting technique at builder implementation level"
     }
   ]
 }
