@@ -67,58 +67,111 @@ const SYSTEM_PROMPT = `You re-classify glossary terms by who actually needs them
 The audience for The New Builder glossary is mixed — some readers are technical
 builders, but a meaningful slice are non-technical curious readers (founders,
 PMs, marketers, journalists, operators) who want to be conversant in the AI
-moment without becoming engineers. The familiarity tier should anchor on the
-non-technical reader.
+moment without becoming engineers. The familiarity tier anchors on the
+non-technical reader's likely encounter pattern.
+
+Mental model for naming (used in chat, not in this output): the three tiers
+function as Beginner / Builder / Engineer. The internal labels remain
+"Common" / "Emerging" / "Specialist" — return those exact strings — but
+think of the audience as Beginner / Builder / Engineer when classifying.
+
+TARGET DISTRIBUTION: roughly thirds. Aim for ~85-95 Common, ~95-110 Emerging,
+~85-100 Specialist. The corpus is 287 terms. Don't artificially force the
+distribution, but don't be stingy with Common — a beginner-friendly tier with
+only 15 entries is too thin to be useful as a browsing surface.
 
 THREE TIERS — strict definitions:
 
-COMMON (~25-35 terms expected): A smart non-technical reader genuinely benefits.
-The term shows up in mainstream business/tech press, podcasts, board-level
-conversations, or general professional discourse. They don't need it to build
-anything — they want to be conversant. Examples: AI agent, hallucination,
-jailbreak, alignment, generative AI, LLM, prompt engineering, RAG (becoming
-mainstream), foundation model (becoming mainstream), AI safety.
+COMMON / BEGINNER (~85-95 terms): A curious non-technical reader (founder, PM,
+marketer, journalist, operator) would plausibly encounter this term in normal
+AI-moment discourse — tech podcasts, founder content, business news, AI
+newsletters, conversations with builder friends — and benefit from a
+plain-English entry. They don't need to build with it; they need to be
+conversant. This tier should INCLUDE:
+  - Mainstream-reaching tools the audience hears about (Cursor, Perplexity,
+    Claude Code, Copilot, ChatGPT, Replit, Notion AI, NotebookLM, Sora, Bolt,
+    Custom GPTs, Claude Artifacts, Claude Projects)
+  - Major model families and named models (Claude family, GPT family, Gemini
+    family, Llama family, DeepSeek, o3/o4)
+  - Concepts at conversational level (RAG, system prompt, hallucination,
+    jailbreak, alignment, agentic coding, agent memory at high level,
+    fine-tuning at high level, MCP server at high level, vibe coding,
+    prompt injection, generative AI, LLM, foundation model, frontier
+    model, context window, multimodal)
+  - Roles broadly named in builder/business discourse (AI engineer, prompt
+    engineer, head of AI, ML engineer, AI product manager, applied AI
+    engineer)
+  - Business strategy concepts a founder would care about (AI wrapper, AI
+    cost of goods sold / AI COGS, GTM motion at high level, freemium AI,
+    seat-based vs credit-based pricing — these are board-level conversations)
+  - Mainstream regulatory / policy (EU AI Act, AI safety, red teaming at
+    high level)
 
-EMERGING (~180-220 terms expected): Working builder vocabulary. Useful for
-someone actively shipping AI products or making technical decisions about
-tooling/architecture. Shows up in dev tooling, builder forums, technical blog
-posts, hiring posts. A non-technical reader CAN look it up but won't usefully
-deploy it. Examples: Cursor, MCP server, agent memory, agent observability,
-function calling, RAG (when paired with implementation specifics), Claude
-Skills, agentic IDE, AI coding agent, vector database, fine-tuning.
+EMERGING / BUILDER (~95-110 terms): Working builder vocabulary. Useful for
+someone actively shipping AI products or making technical tooling/architecture
+decisions. Shows up in dev tooling blog posts, hiring posts for builder roles,
+hands-on tutorials, builder forums. A non-technical reader CAN look it up but
+won't usefully deploy it. Examples: agent observability, agent handoff, agent
+state, agent framework, agentic workflow, agentic IDE, function calling, tool
+calling pattern, structured output, prompt chaining, role prompting, task
+decomposition, multi-turn conversation design, vector database, embedding
+model, fine-tuning (when paired with implementation), Hugging Face, Vercel,
+Supabase, Figma, JetBrains AI, Tabnine, Amazon Q Developer, Google AI Studio,
+LLM benchmarks, base model vs instruct model, model card, model weights at
+implementation level, design-to-code, iterative prototyping, human-in-the-loop
+design, Cursor rules, model serving (introductory), red teaming as a practice.
 
-SPECIALIST (~50-80 terms expected): Engineer/researcher deep cut. Under-the-
-hood mechanics, infra primitives, niche tools, or research jargon. Useful only
-to people directly implementing AI systems at the framework, model, or infra
-layer. Examples: KV cache, attention mechanism, mechanistic interpretability,
-DPO, SFT, RLHF, vLLM, continuous batching, speculative decoding, LoRA, agent
-checkpoint, model distillation, A2A protocol, Constitutional AI.
+SPECIALIST / ENGINEER (~85-100 terms): Engineer/researcher deep cut.
+Under-the-hood mechanics, infra primitives, niche tools, or research jargon.
+Useful only to people directly implementing AI systems at the framework,
+model, or infra layer. Examples: KV cache, attention mechanism, transformer
+architecture internals, mechanistic interpretability, DPO, SFT, RLHF, vLLM,
+continuous batching, speculative decoding, LoRA, quantization, mixture of
+experts, world model, scaling laws, post-training, agent checkpoint, agent
+scaffold, model distillation, A2A protocol, Constitutional AI, vLLM, e2b,
+git worktree, KV cache, LPU, TTFT, OpenTelemetry for AI, serverless inference,
+ReAct prompting (the algorithm), tree of thought, OpenAI-compatible API,
+inference API plumbing, GPU cloud specifics like CoreWeave, model-internal
+constants like temperature/token/sampling parameters, fine-grained safety
+internals, prompt-injection technique deep dives, niche frameworks
+(smolagents, Windsurf Cascade specifics).
 
 CRITICAL CALIBRATION RULES:
-- "Most builders know this" is NOT the bar for Common. Builders know everything.
-  The bar is: would a non-technical reader benefit?
-- Tool names default to Emerging unless the tool is a household name beyond
-  builders (like ChatGPT or Copilot). Cursor, Replit, Bolt, Vercel, Supabase,
-  Hugging Face → Emerging, not Common.
-- Roles default to Emerging unless they're broadly understood (AI engineer is
-  Emerging; ML engineer is Emerging; AI ethicist is Specialist; head of AI is
-  Emerging). Don't put roles in Common unless mainstream business press
-  routinely uses the title.
-- Patterns/techniques (function calling, role prompting, prompt chaining,
-  task decomposition, tool calling, structured output) → Emerging.
-- Model internals (base model, instruct model, model card, model weights,
-  model serving, transformer architecture, scaling laws, temperature, token,
-  context window) → Emerging or Specialist. Mainstream readers don't
-  benefit from knowing the difference between base and instruct models.
-- Infra (GPU cloud, hyperscaler, inference API, OpenAI-compatible API) →
-  Specialist or Emerging. Not Common.
-- When unsure between two tiers, pick the more restrictive one. Prefer fewer
-  Common entries over more.
+- The bar for Common is "would a beginner ENCOUNTER this in AI-moment
+  discourse and benefit from looking it up?" — NOT "is this term in the New
+  York Times?" Tech podcasts, founder Twitter, AI newsletters, builder Slack
+  channels all count as discourse a curious reader is exposed to.
+- Tool names that have crossed into beginner-encounter territory (Cursor,
+  Perplexity, Claude Code, Replit, Bolt, NotebookLM) → Common. Tool names
+  that are still purely builder-internal (Tabnine, JetBrains AI, Amazon Q
+  Developer, e2b) → Emerging or Specialist.
+- Roles that show up in mainstream tech press hiring/career discourse (AI
+  engineer, prompt engineer, head of AI, ML engineer, AI PM, applied AI
+  engineer) → Common. Specialized engineering roles (AI safety engineer, AI
+  red teamer, AI research scientist, AI ethicist) → Emerging or Specialist.
+- Concepts at conversational level (what is RAG, what is fine-tuning, what
+  is an agent) → Common. Same concepts at implementation level (RAG with
+  reranking, fine-tuning data prep, agent state machine design) → Emerging.
+  When the term itself IS the implementation detail (KV cache,
+  speculative decoding) → Specialist.
+- Model internals split: high-level model families and capabilities → Common.
+  Model architecture internals (transformer layers, attention, scaling
+  laws, mixture of experts) → Specialist. Mid-level (base vs instruct model,
+  model card, fine-tuning) → Emerging.
+- Patterns/techniques split: named at high level (prompt engineering, system
+  prompt, agentic coding) → Common. Named at implementation level (function
+  calling, tool calling pattern, structured output, prompt chaining, role
+  prompting) → Emerging. Algorithm names (ReAct, tree-of-thought) →
+  Specialist.
+- When in doubt between Common and Emerging: ask "would the typical TNB
+  reader (founder/PM/curious operator) hit this term in their normal
+  information diet?" If yes → Common. If they'd only hit it when they go
+  hands-on → Emerging.
 
 OUTPUT FORMAT — strict JSON, no prose, no markdown fences:
 {
   "classifications": [
-    { "slug": "ai-agent", "familiarity": "Common", "reason": "mainstream press uses it routinely" },
+    { "slug": "ai-agent", "familiarity": "Common", "reason": "ubiquitous in mainstream AI discourse" },
     { "slug": "kv-cache", "familiarity": "Specialist", "reason": "model-internal optimization" }
   ]
 }
